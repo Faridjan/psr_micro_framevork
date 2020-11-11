@@ -11,7 +11,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Farid\\": "src/"
+      "Farid\\": "src/",
+      "Farid\\Tests\\": "tests/"
     }
   },
   "authors": [
