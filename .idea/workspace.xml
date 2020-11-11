@@ -7,7 +7,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -17,6 +17,9 @@
         <option value="composer.json" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -65,7 +68,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/project-01" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -84,6 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605085075514</updated>
       <workItem from="1605085076574" duration="3735000" />
+      <workItem from="1605088920248" duration="390000" />
     </task>
     <servers />
   </component>
@@ -119,10 +123,11 @@
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
     <state x="485" y="1268" width="1022" height="737" key="SettingsEditor/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1605086450848" />
-    <state x="659" y="1339" width="672" height="678" key="search.everywhere.popup" timestamp="1605086782528">
-      <screen x="0" y="1080" width="1920" height="1080" />
+    <state x="706" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1605088988325">
+      <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="659" y="1339" width="672" height="678" key="search.everywhere.popup/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1605086782528" />
+    <state x="706" y="259" width="672" height="678" key="search.everywhere.popup/0.1080.1920.1080/72.0.1848.1080@72.0.1848.1080" timestamp="1605088988325" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
