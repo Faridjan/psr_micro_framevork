@@ -2,6 +2,7 @@
 
 use Laminas\Diactoros\Response\HtmlResponse;
 use Laminas\Diactoros\Response\JsonResponse;
+use Psr\Http\Message\ServerRequestInterface;
 use Laminas\Diactoros\ServerRequestFactory;
 use Laminas\HttpHandlerRunner\Emitter\SapiEmitter;
 use Laminas\Diactoros\Stream;
@@ -23,29 +24,45 @@ $stream2 = new Stream('php://temp', 'wb+');
 $stream2->write('<hr><pre>Get query:' . print_r($request->getQueryParams(), true) . '</pre>');
 $stream2->rewind();
 
+$action = null;
+
 if ($path === '/') {
-    $name = $request->getQueryParams()['name'] ?? 'Guest';
-    $response = new HtmlResponse('Hello, ' . $name);
+    $action = function (ServerRequestInterface $request) {
+        $name = $request->getQueryParams()['name'] ?? 'Guest';
+        return new HtmlResponse('Hello, ' . $name);
+    };
 } elseif ($path === '/about') {
-    $response = new HtmlResponse('This is a simple site');
+    $action = function () {
+        return new HtmlResponse('This is a simple site');
+    };
 } elseif ($path === '/blog') {
-    $response = new JsonResponse([
-        ['id' => 1, 'title' => 'First post'],
-        ['id' => 2, 'title' => 'Second post']
-    ]);
+    $action = function () {
+        return new JsonResponse([
+            ['id' => 1, 'title' => 'First post'],
+            ['id' => 2, 'title' => 'Second post']
+        ]);
+    };
 } elseif (preg_match('#^/blog/(?P<id>\d+)$#i', $path, $matches)) {
-    if ($matches['id'] == 1) {
-        $response = new JsonResponse(['id' => 1, 'title' => 'First post']);
-    } elseif ($matches['id'] == 2) {
-        $response = new JsonResponse(['id' => 1, 'title' => 'First post']);
-    } else {
-        $response = new JsonResponse(['Error' => 'Undefined page'], 400);
-    }
+    $request->withAttribute('id', $matches['id']);
+    $action = function (ServerRequestInterface $request) {
+        $id = $request->getAttribute('id');
+        if ($id == 1) {
+            return new JsonResponse(['id' => 1, 'title' => 'First post']);
+        } elseif ($id == 2) {
+            return new JsonResponse(['id' => 2, 'title' => 'First post']);
+        } else {
+            return new JsonResponse(['Error' => 'Undefined page'], 400);
+        }
+    };
+}
+
+### Post processing
+if ($action) {
+    $response = $action($request);
 } else {
     $response = new JsonResponse(['error' => 'Undefined page'], 404);
 }
 
-### Post processing
 $response = $response->withHeader("X-Developer", 'Fred');
 
 ### Sending
