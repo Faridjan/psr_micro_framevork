@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '67d3a4bd7210e8cc93d32c7bf7132686249117cd',
+    'reference' => 'b3a58f3f01ee345337e28bd89e7d0b4913a2030a',
     'name' => 'faridjan/my_framework',
   ),
   'versions' => 
@@ -27,7 +27,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '67d3a4bd7210e8cc93d32c7bf7132686249117cd',
+      'reference' => 'b3a58f3f01ee345337e28bd89e7d0b4913a2030a',
     ),
     'laminas/laminas-diactoros' => 
     array (
@@ -37,6 +37,15 @@
       array (
       ),
       'reference' => '36ef09b73e884135d2059cc498c938e90821bb57',
+    ),
+    'laminas/laminas-httphandlerrunner' => 
+    array (
+      'pretty_version' => '1.2.0',
+      'version' => '1.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e1a5dad040e0043135e8095ee27d1fbf6fb640e1',
     ),
     'laminas/laminas-zendframework-bridge' => 
     array (
@@ -208,6 +217,15 @@
       array (
         0 => '1.0',
       ),
+    ),
+    'psr/http-server-handler' => 
+    array (
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'aff2f80e33b7f026ec96bb42f63242dc50ffcae7',
     ),
     'roave/security-advisories' => 
     array (
@@ -395,6 +413,13 @@
       'replaced' => 
       array (
         0 => '^2.2.1',
+      ),
+    ),
+    'zendframework/zend-httphandlerrunner' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '^1.1.0',
       ),
     ),
   ),

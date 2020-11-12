@@ -5,7 +5,6 @@ namespace Farid\Framework\Http;
 
 
 use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\StreamInterface;
 
 class Response implements ResponseInterface
 {
@@ -34,7 +33,7 @@ class Response implements ResponseInterface
         return $this->body;
     }
 
-    public function withBody(StreamInterface $body): self
+    public function withBody($body): self
     {
         $new = clone $this;
         $new->body = $body;
