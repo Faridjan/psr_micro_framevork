@@ -14,12 +14,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '67d3a4bd7210e8cc93d32c7bf7132686249117cd',
     'name' => 'faridjan/my_framework',
   ),
   'versions' => 
@@ -35,12 +35,30 @@ private static $installed = array (
     ),
     'faridjan/my_framework' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '67d3a4bd7210e8cc93d32c7bf7132686249117cd',
+    ),
+    'laminas/laminas-diactoros' => 
+    array (
+      'pretty_version' => '2.4.1',
+      'version' => '2.4.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '36ef09b73e884135d2059cc498c938e90821bb57',
+    ),
+    'laminas/laminas-zendframework-bridge' => 
+    array (
+      'pretty_version' => '1.1.1',
+      'version' => '1.1.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6ede70583e101030bcace4dcddd648f760ddf642',
     ),
     'myclabs/deep-copy' => 
     array (
@@ -171,6 +189,38 @@ private static $installed = array (
       array (
       ),
       'reference' => '9fa359ff5ddaa5eb2be2bedb08a6a5787a5807ab',
+    ),
+    'psr/http-factory' => 
+    array (
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '12ac7fcd07e5b077433f5f2bee95b3a771bf61be',
+    ),
+    'psr/http-factory-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '1.0',
+      ),
+    ),
+    'psr/http-message' => 
+    array (
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f6561bf28d520154e4b0ec72be95418abe6d9363',
+    ),
+    'psr/http-message-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '1.0',
+      ),
     ),
     'roave/security-advisories' => 
     array (
@@ -352,6 +402,13 @@ private static $installed = array (
       array (
       ),
       'reference' => 'bafc69caeb4d49c39fd0779086c03a3738cbb389',
+    ),
+    'zendframework/zend-diactoros' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '^2.2.1',
+      ),
     ),
   ),
 );

@@ -7,44 +7,31 @@ use Farid\Framework\Http\Request;
 
 class RequestTest extends TestCase
 {
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $_GET = [];
-        $_POST = [];
-    }
-
     public function testEmpty(): void
     {
-        $_GET = [];
-        $_POST = [];
-
         $request = new Request();
         self::assertEquals([], $request->getQueryParams());
-        self::assertNull($request->getParsetBody());
+        self::assertNull($request->getParsedBody());
     }
 
     public function testQueryParams(): void
     {
-        $_GET = $data = [
+        $request = (new Request())->withQueryParams($data = [
             'name' => "John",
             'age' => '28'
-        ];
-
-        $request = new Request();
+        ]);
 
         self::assertEquals($data, $request->getQueryParams());
-        self::assertNull($request->getParsetBody());
+        self::assertNull($request->getParsedBody());
     }
 
     public function testParsedBody()
     {
-        $_POST = $data = ['title' => 'Test title'];
-
-        $request = new Request();
+        $request = (new Request())->withParsedBody(
+            $data = ["title" => "Test title"]
+        );
 
         self::assertEquals([], $request->getQueryParams());
-        self::assertEquals($data, $request->getParsetBody());
+        self::assertEquals($data, $request->getParsedBody());
     }
 }
