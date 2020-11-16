@@ -3,7 +3,7 @@
 use Laminas\Diactoros\Response\JsonResponse;
 use Laminas\Diactoros\ServerRequestFactory;
 use Laminas\HttpHandlerRunner\Emitter\SapiEmitter;
-use Farid\Framework\Http\Router\Router;
+use Framework\Http\Router\AuraRouterAdapter;
 use Farid\Framework\Http\Router\RouteCollection;
 use Farid\Framework\Http\Router\Exception\RequestNotMatchedException;
 use Farid\Framework\Http\ActionResolver;
@@ -20,15 +20,16 @@ $request = ServerRequestFactory::fromGlobals();
 
 
 ### ROUTE COLLECTION / ACTIONS
-$routes = new RouteCollection();
+$aura = new Aura\Router\RouterContainer();
+$routes = $aura->getMap();
 
 $routes->get('home', '/', HelloAction::class);
 $routes->get('about', '/about', AboutAction::class);
 $routes->get('blog', '/blog', IndexAction::class);
-$routes->get('blog_show', '/blog/{id}', ShowAction::class, ["id" => "\d+"]);
+$routes->get('blog_show', '/blog/{id}', ShowAction::class)->tokens(["id" => "\d+"]);
 
 ### ROUTING
-$router = new Router($routes);
+$router = new AuraRouterAdapter($aura);
 $resolver = new ActionResolver();
 
 try {

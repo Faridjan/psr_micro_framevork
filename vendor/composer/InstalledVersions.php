@@ -19,11 +19,20 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'b3a58f3f01ee345337e28bd89e7d0b4913a2030a',
+    'reference' => '1af53327344a3ab9f2fa3428d3d71e34ac5407b8',
     'name' => 'faridjan/my_framework',
   ),
   'versions' => 
   array (
+    'aura/router' => 
+    array (
+      'pretty_version' => '3.1.0',
+      'version' => '3.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '52507bc813c92511dbcacc7463f163ef5149ad38',
+    ),
     'doctrine/instantiator' => 
     array (
       'pretty_version' => '1.4.0',
@@ -40,7 +49,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'b3a58f3f01ee345337e28bd89e7d0b4913a2030a',
+      'reference' => '1af53327344a3ab9f2fa3428d3d71e34ac5407b8',
     ),
     'laminas/laminas-diactoros' => 
     array (
@@ -239,6 +248,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'aff2f80e33b7f026ec96bb42f63242dc50ffcae7',
+    ),
+    'psr/log' => 
+    array (
+      'pretty_version' => '1.1.3',
+      'version' => '1.1.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '0f73288fd15629204f9d42b7055f72dacbe811fc',
     ),
     'roave/security-advisories' => 
     array (
