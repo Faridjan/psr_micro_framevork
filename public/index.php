@@ -6,6 +6,7 @@ use Laminas\HttpHandlerRunner\Emitter\SapiEmitter;
 use Farid\Framework\Http\Router\Router;
 use Farid\Framework\Http\Router\RouteCollection;
 use Farid\Framework\Http\Router\Exception\RequestNotMatchedException;
+use Farid\Framework\Http\ActionResolver;
 
 use Farid\App\Http\Action\HelloAction;
 use Farid\App\Http\Action\AboutAction;
@@ -28,6 +29,7 @@ $routes->get('blog_show', '/blog/{id}', ShowAction::class, ["id" => "\d+"]);
 
 ### ROUTING
 $router = new Router($routes);
+$resolver = new ActionResolver();
 
 try {
     $result = $router->match($request);
@@ -36,7 +38,7 @@ try {
         $request = $request->withAttribute($attribute, $value);
     }
     $handler = $result->getHandler();
-    $action = is_string($handler) ? new $handler() : $handler;
+    $action = $resolver->resolve($handler);
     $response = $action($request);
 } catch (RequestNotMatchedException $e) {
     $response = new JsonResponse(['error' => 'Undefined page'], 404);
