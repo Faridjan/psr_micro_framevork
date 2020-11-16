@@ -6,6 +6,7 @@
   "config": {
     "sort-packages": true
   },
+  "ext-json": "*",
   "require": {
     "php": ">=7.1.0",
     "laminas/laminas-diactoros": "^2.4",
