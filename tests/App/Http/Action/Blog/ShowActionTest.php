@@ -34,6 +34,6 @@ class ShowActionTest extends TestCase
         $response = $action($request);
 
         self::assertEquals(404, $response->getStatusCode());
-        self::assertEquals('Undefined page', $response->getBody()->getContents());
+        self::assertEquals('"Undefined page"', $response->getBody()->getContents());
     }
 }

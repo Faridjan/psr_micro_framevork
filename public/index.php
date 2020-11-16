@@ -3,10 +3,10 @@
 use Laminas\Diactoros\Response\JsonResponse;
 use Laminas\Diactoros\ServerRequestFactory;
 use Laminas\HttpHandlerRunner\Emitter\SapiEmitter;
-use Framework\Http\Router\AuraRouterAdapter;
-use Farid\Framework\Http\Router\RouteCollection;
+use Farid\Framework\Http\Router\AuraRouterAdapter;
 use Farid\Framework\Http\Router\Exception\RequestNotMatchedException;
 use Farid\Framework\Http\ActionResolver;
+use Aura\Router\RouterContainer;
 
 use Farid\App\Http\Action\HelloAction;
 use Farid\App\Http\Action\AboutAction;
@@ -18,13 +18,13 @@ require_once __DIR__ . '/../vendor/autoload.php';
 ### REQUEST
 $request = ServerRequestFactory::fromGlobals();
 
-
 ### ROUTE COLLECTION / ACTIONS
-$aura = new Aura\Router\RouterContainer();
+$aura = new RouterContainer();
 $routes = $aura->getMap();
 
 $routes->get('home', '/', HelloAction::class);
 $routes->get('about', '/about', AboutAction::class);
+$routes->get('cabinet', '/cabinet', \Farid\App\Http\Action\CabinetAction::class);
 $routes->get('blog', '/blog', IndexAction::class);
 $routes->get('blog_show', '/blog/{id}', ShowAction::class)->tokens(["id" => "\d+"]);
 

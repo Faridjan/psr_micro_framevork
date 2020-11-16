@@ -1,13 +1,12 @@
 <?php
 
-namespace Framework\Http\Router;
+namespace Farid\Framework\Http\Router;
 
 use Aura\Router\Exception\RouteNotFound;
 use Aura\Router\RouterContainer;
 use Farid\Framework\Http\Router\Exception\RequestNotMatchedException;
 use Farid\Framework\Http\Router\Exception\RouteNotFoundException;
 use Psr\Http\Message\ServerRequestInterface;
-use Farid\Framework\Http\Router\Result;
 
 class AuraRouterAdapter implements Router
 {
@@ -28,7 +27,7 @@ class AuraRouterAdapter implements Router
         throw new RequestNotMatchedException($request);
     }
 
-    public function generate($name, array $params): string
+    public function generate($name, array $params = []): string
     {
         $generator = $this->aura->getGenerator();
         try {

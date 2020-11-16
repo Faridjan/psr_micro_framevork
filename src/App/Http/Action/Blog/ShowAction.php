@@ -15,9 +15,9 @@ class ShowAction
         $id = $request->getAttribute('id');
 
         if ($id > 5) {
-            return new JsonResponse(['error' => 'Undefined page'], 404);
+            return new JsonResponse('Undefined page', 404);
         }
 
-        return new JsonResponse(['id' => $id, 'Title' => 'Post #' . $id]);
+        return new JsonResponse(['id' => $id, 'title' => 'Post #' . $id]);
     }
 }

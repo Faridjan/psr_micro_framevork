@@ -3,8 +3,8 @@
 namespace Tests\Framework\Http;
 
 use Farid\Framework\Http\Router\Exception\RequestNotMatchedException;
+use Farid\Framework\Http\Router\Route\RegexpRoute;
 use Farid\Framework\Http\Router\RouteCollection;
-use Farid\Framework\Http\Router\Router;
 use PHPUnit\Framework\TestCase;
 use Laminas\Diactoros\Uri;
 use Laminas\Diactoros\ServerRequest;
@@ -18,7 +18,7 @@ class RouterTest extends TestCase
         $routes->get($nameGet = 'blog', '/blog', $handlerGet = 'handler_get');
         $routes->post($namePost = 'blog_edit', '/blog', $handlerPost = 'handler_post');
 
-        $router = new Router($routes);
+        $router = new RegexpRoute($routes);
 
         $result = $router->match($this->buildRequest('GET', '/blog'));
         self::assertEquals($nameGet, $result->getName());
@@ -35,7 +35,7 @@ class RouterTest extends TestCase
 
         $routes->post('blog', '/blog', 'handler_post');
 
-        $router = new Router($routes);
+        $router = new RegexpRoute($routes);
 
         $this->expectException(RequestNotMatchedException::class);
         $router->match($this->buildRequest('DELETE', '/blog'));
@@ -47,7 +47,7 @@ class RouterTest extends TestCase
 
         $routes->get($name = 'blog_show', '/blog/{id}', 'handler', ['id' => '\d+']);
 
-        $router = new Router($routes);
+        $router = new RegexpRoute($routes);
 
         $result = $router->match($this->buildRequest('GET', '/blog/5'));
 
@@ -61,7 +61,7 @@ class RouterTest extends TestCase
 
         $routes->get($name = 'blog_show', '/blog/{id}', 'handler', ['id' => '\d+']);
 
-        $router = new Router($routes);
+        $router = new RegexpRoute($routes);
 
         $this->expectException(RequestNotMatchedException::class);
         $router->match($this->buildRequest('GET', '/blog/slug'));
@@ -74,7 +74,7 @@ class RouterTest extends TestCase
         $routes->get('blog', '/blog', 'handler');
         $routes->get('blog_show', '/blog/{id}', 'handler', ['id' => '\d+']);
 
-        $router = new Router($routes);
+        $router = new RegexpRoute($routes);
 
         self::assertEquals('/blog', $router->generate('blog'));
         self::assertEquals('/blog/5', $router->generate('blog_show', ['id' => 5]));
@@ -86,7 +86,7 @@ class RouterTest extends TestCase
 
         $routes->get($name = 'blog_show', '/blog/{id}', 'handler', ['id' => '\d+']);
 
-        $router = new Router($routes);
+        $router = new RegexpRoute($routes);
 
         $this->expectException(\InvalidArgumentException::class);
         $router->generate('blog_show', ['slug' => 'post']);

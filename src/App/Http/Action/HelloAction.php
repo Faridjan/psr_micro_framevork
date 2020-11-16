@@ -2,12 +2,15 @@
 
 namespace Farid\App\Http\Action;
 
-use Laminas\Diactoros\Response\JsonResponse;
+use Laminas\Diactoros\Response\HtmlResponse;
+use Psr\Http\Message\ServerRequestInterface;
 
 class HelloAction
 {
-    public function __invoke()
+    public function __invoke(ServerRequestInterface $request)
     {
-        return new JsonResponse('I am a simple site.');
+        $name = $request->getQueryParams()['name'] ?? 'Guest';
+
+        return new HtmlResponse('Hello, ' . $name . '!');
     }
 }
