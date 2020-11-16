@@ -8,15 +8,22 @@ use Farid\Framework\Http\Router\Exception\RequestNotMatchedException;
 use Farid\Framework\Http\ActionResolver;
 use Aura\Router\RouterContainer;
 
+use Farid\App\Http\Action\BasicAuthActionDecorator;
+
 use Farid\App\Http\Action\HelloAction;
 use Farid\App\Http\Action\AboutAction;
 use Farid\App\Http\Action\Blog\IndexAction;
 use Farid\App\Http\Action\Blog\ShowAction;
+use Farid\App\Http\Action\CabinetAction;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
 ### REQUEST
 $request = ServerRequestFactory::fromGlobals();
+
+$params = [
+    'users' => ['admin' => 'password'],
+];
 
 ### ROUTE COLLECTION / ACTIONS
 $aura = new RouterContainer();
@@ -24,7 +31,7 @@ $routes = $aura->getMap();
 
 $routes->get('home', '/', HelloAction::class);
 $routes->get('about', '/about', AboutAction::class);
-$routes->get('cabinet', '/cabinet', \Farid\App\Http\Action\CabinetAction::class);
+$routes->get('cabinet', '/cabinet', new BasicAuthActionDecorator(new CabinetAction(), $params['users']));
 $routes->get('blog', '/blog', IndexAction::class);
 $routes->get('blog_show', '/blog/{id}', ShowAction::class)->tokens(["id" => "\d+"]);
 
