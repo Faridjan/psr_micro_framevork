@@ -7,6 +7,10 @@ use Farid\Framework\Http\Router\Router;
 use Farid\Framework\Http\Router\RouteCollection;
 use Farid\Framework\Http\Router\Exception\RequestNotMatchedException;
 
+use Farid\App\Http\Action\HelloAction;
+use Farid\App\Http\Action\AboutAction;
+use Farid\App\Http\Action\Blog\IndexAction;
+use Farid\App\Http\Action\Blog\ShowAction;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -17,10 +21,10 @@ $request = ServerRequestFactory::fromGlobals();
 ### ROUTE COLLECTION / ACTIONS
 $routes = new RouteCollection();
 
-$routes->get('home', '/', new \Farid\App\Http\Action\HelloAction());
-$routes->get('about', '/about', new \Farid\App\Http\Action\AboutAction());
-$routes->get('blog', '/blog', new \Farid\App\Http\Action\Blog\IndexAction());
-$routes->get('blog_show', '/blog/{id}', new \Farid\App\Http\Action\Blog\ShowAction(), ["id" => "\d+"]);
+$routes->get('home', '/', HelloAction::class);
+$routes->get('about', '/about', AboutAction::class);
+$routes->get('blog', '/blog', IndexAction::class);
+$routes->get('blog_show', '/blog/{id}', ShowAction::class, ["id" => "\d+"]);
 
 ### ROUTING
 $router = new Router($routes);
@@ -31,7 +35,8 @@ try {
     foreach ($result->getAttributes() as $attribute => $value) {
         $request = $request->withAttribute($attribute, $value);
     }
-    $action = $result->getHandler();
+    $handler = $result->getHandler();
+    $action = is_string($handler) ? new $handler() : $handler;
     $response = $action($request);
 } catch (RequestNotMatchedException $e) {
     $response = new JsonResponse(['error' => 'Undefined page'], 404);
