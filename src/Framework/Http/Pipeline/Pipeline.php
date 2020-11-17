@@ -26,7 +26,7 @@ class Pipeline
         return $this->next($request, $default);
     }
 
-    public function next(ServerRequestInterface $request, $default): ResponseInterface
+    public function next(ServerRequestInterface $request, callable $default): ResponseInterface
     {
         if ($this->queue->isEmpty()) {
             return $default($request);

@@ -8,6 +8,7 @@ use Farid\Framework\Http\Router\Exception\RequestNotMatchedException;
 use Farid\Framework\Http\ActionResolver;
 use Aura\Router\RouterContainer;
 use Psr\Http\Message\ServerRequestInterface;
+use Farid\Framework\Http\Pipeline\Pipeline;
 
 use Farid\App\Http\Middleware\BasicAuthMiddleware;
 use Farid\App\Http\Middleware\ProfileMiddleware;
@@ -39,10 +40,13 @@ $routes->get('cabinet', '/cabinet', function (ServerRequestInterface $request) u
     $profiler = new ProfileMiddleware();
     $cabinet = new CabinetAction();
 
-    return $profiler($request, function (ServerRequestInterface $request) use ($cabinet, $auth) {
-        return $auth($request, function (ServerRequestInterface $request) use ($cabinet) {
-            return $cabinet($request);
-        });
+    $pipeline = new Pipeline();
+    $pipeline->pipe($profiler);
+    $pipeline->pipe($auth);
+    $pipeline->pipe($cabinet);
+
+    return $pipeline($request, function () {
+        return new HtmlResponse('<H2>Undefined Page</H2>', 404);
     });
 
 });
