@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <phpunit bootstrap="./vendor/autoload.php"
          colors="true"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
-         stopOnFailure="false"
->
-    <testsuite>
-        <testunit name="Test Suite">
+         stopOnFailure="false">
+    <testsuites>
+        <testsuite name="Test Suite">
             <directory>./tests</directory>
-        </testunit>
-    </testsuite>
+        </testsuite>
+    </testsuites>
     <filter>
         <whitelist>
-            <directory suffix=".php">
-                ./framework
-            </directory>
+            <directory suffix=".php">./framework/</directory>
+            <directory suffix=".php">./app/</directory>
         </whitelist>
     </filter>
 </phpunit>

@@ -1,2 +1,5 @@
+.idea
 /vendor
 /phpunit.xml
+/src/Framework/Http/Pipeline
+/src/Framework/Http/Pipeline/*.php
