@@ -23,7 +23,7 @@ class Pipeline
 
     public function __invoke(ServerRequestInterface $request, callable $default): ResponseInterface
     {
-        $delegate = new Next($this->queue, $default);
+        $delegate = new Next(clone $this->queue, $default);
         return $delegate($request);
     }
 

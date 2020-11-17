@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Farid\Framework\Http;
+namespace Farid\Framework\Http\Pipeline;
 
 
-class ActionResolver
+class MiddlewareResolver
 {
     public function resolve($handler): callable
     {

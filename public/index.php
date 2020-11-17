@@ -1,17 +1,16 @@
 <?php
 
-use Laminas\Diactoros\Response\HtmlResponse;
 use Laminas\Diactoros\ServerRequestFactory;
 use Laminas\HttpHandlerRunner\Emitter\SapiEmitter;
 use Farid\Framework\Http\Router\AuraRouterAdapter;
 use Farid\Framework\Http\Router\Exception\RequestNotMatchedException;
-use Farid\Framework\Http\ActionResolver;
+use Farid\Framework\Http\Pipeline\MiddlewareResolver;
 use Aura\Router\RouterContainer;
-use Psr\Http\Message\ServerRequestInterface;
 use Farid\Framework\Http\Pipeline\Pipeline;
 
 use Farid\App\Http\Middleware\BasicAuthMiddleware;
 use Farid\App\Http\Middleware\ProfileMiddleware;
+use Farid\App\Http\Middleware\NotFoundHandler;
 
 use Farid\App\Http\Action\HelloAction;
 use Farid\App\Http\Action\AboutAction;
@@ -35,28 +34,18 @@ $routes = $aura->getMap();
 $routes->get('home', '/', HelloAction::class);
 $routes->get('about', '/about', AboutAction::class);
 
-$routes->get('cabinet', '/cabinet', function (ServerRequestInterface $request) use ($params) {
-    $auth = new BasicAuthMiddleware($params['users']);
-    $profiler = new ProfileMiddleware();
-    $cabinet = new CabinetAction();
-
-    $pipeline = new Pipeline();
-    $pipeline->pipe($profiler);
-    $pipeline->pipe($auth);
-    $pipeline->pipe($cabinet);
-
-    return $pipeline($request, function () {
-        return new HtmlResponse('<H2>Undefined Page</H2>', 404);
-    });
-
-});
+$routes->get('cabinet', '/cabinet', [
+    ProfileMiddleware::class,
+    new BasicAuthMiddleware($params['users']),
+    CabinetAction::class,
+]);
 
 $routes->get('blog', '/blog', IndexAction::class);
 $routes->get('blog_show', '/blog/{id}', ShowAction::class)->tokens(["id" => "\d+"]);
 
 ### ROUTING
 $router = new AuraRouterAdapter($aura);
-$resolver = new ActionResolver();
+$resolver = new MiddlewareResolver();
 
 try {
     $result = $router->match($request);
@@ -64,11 +53,17 @@ try {
     foreach ($result->getAttributes() as $attribute => $value) {
         $request = $request->withAttribute($attribute, $value);
     }
-    $handler = $result->getHandler();
-    $action = $resolver->resolve($handler);
-    $response = $action($request);
+    $handlers = $result->getHandler();
+
+    $pipeline = new Pipeline();
+
+    foreach (is_array($handlers) ? $handlers : [$handlers] as $handler) {
+        $pipeline->pipe($resolver->resolve($handler));
+    }
+    $response = $pipeline($request, new NotFoundHandler());
 } catch (RequestNotMatchedException $e) {
-    $response = new HtmlResponse('Undefined page', 404);
+    $handler = new NotFoundHandler();
+    $response = $handler($request);
 }
 
 ### Post processing
