@@ -11,6 +11,6 @@ class HelloAction
     {
         $name = $request->getQueryParams()['name'] ?? 'Guest';
 
-        return new HtmlResponse('Hello, ' . $name . '!');
+        return new HtmlResponse('<h2>Hello, ' . $name . '!</h2>');
     }
 }

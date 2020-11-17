@@ -72,3 +72,29 @@ $response = $response->withHeader("X-Developer", 'Fred');
 
 ### Sending
 (new SapiEmitter())->emit($response);
+
+$contentType = $response->getHeader('content-type')[0];
+
+if (preg_match('#html#i', $contentType)) {
+    echo <<<END
+    <style>
+       * {
+            box-sizing: border-box;
+       }
+       body {
+            padding: 0;
+            margin: 0;
+           background: gray;
+           color: #fff;
+           display: flex;
+           align-items: center;
+           flex-direction: column;
+           justify-content: center;
+           height: 100vh;
+       }
+       h1,h2 {
+       margin-top: 0;
+       }
+    </style>
+END;
+}

@@ -10,6 +10,6 @@ class NotFoundHandler
 {
     public function __invoke(ServerRequestInterface $request)
     {
-        return new HtmlResponse('<H2>Undefined Page</H2>', 404);
+        return new HtmlResponse('<h1>404</h1><H2>Undefined Page</H2>', 404);
     }
 }

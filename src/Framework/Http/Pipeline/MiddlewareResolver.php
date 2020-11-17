@@ -4,10 +4,19 @@
 namespace Farid\Framework\Http\Pipeline;
 
 
+use Psr\Http\Message\RequestInterface;
+
 class MiddlewareResolver
 {
     public function resolve($handler): callable
     {
-        return \is_string($handler) ? new $handler() : $handler;
+        if (\is_string($handler)) {
+            return function (RequestInterface $request, callable $next) use ($handler) {
+                $object = new $handler();
+                return $object($request, $next);
+            };
+        }
+
+        return $handler;
     }
 }
