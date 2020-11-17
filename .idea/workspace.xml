@@ -31,7 +31,6 @@
     <list default="true" id="0d6cd90e-6bff-4ecf-817d-36e5a29b5c09" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/App/Http/Middleware/BasicAuthMiddleware.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/App/Http/Middleware/ProfileMiddleware.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Framework/Http/Pipeline/Pipeline.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignor" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/MyFramework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyFramework.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
@@ -186,7 +185,7 @@
       <workItem from="1605523100272" duration="6022000" />
       <workItem from="1605518932569" duration="3505000" />
       <workItem from="1605525621008" duration="5704000" />
-      <workItem from="1605587197667" duration="4731000" />
+      <workItem from="1605587197667" duration="5125000" />
     </task>
     <servers />
   </component>
