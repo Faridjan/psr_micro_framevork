@@ -23,6 +23,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 ### REQUEST
 $request = ServerRequestFactory::fromGlobals();
 
+### PARAMS
 $params = [
     'users' => ['admin' => 'password'],
 ];
@@ -35,7 +36,6 @@ $routes->get('home', '/', HelloAction::class);
 $routes->get('about', '/about', AboutAction::class);
 
 $routes->get('cabinet', '/cabinet', [
-    ProfileMiddleware::class,
     new BasicAuthMiddleware($params['users']),
     CabinetAction::class,
 ]);
@@ -47,6 +47,9 @@ $routes->get('blog_show', '/blog/{id}', ShowAction::class)->tokens(["id" => "\d+
 $router = new AuraRouterAdapter($aura);
 $resolver = new MiddlewareResolver();
 
+$pipeline = new Pipeline();
+$pipeline->pipe($resolver->resolve(ProfileMiddleware::class));
+
 try {
     $result = $router->match($request);
 
@@ -55,16 +58,14 @@ try {
     }
     $handlers = $result->getHandler();
 
-    $pipeline = new Pipeline();
-
     foreach (is_array($handlers) ? $handlers : [$handlers] as $handler) {
         $pipeline->pipe($resolver->resolve($handler));
     }
-    $response = $pipeline($request, new NotFoundHandler());
+
 } catch (RequestNotMatchedException $e) {
-    $handler = new NotFoundHandler();
-    $response = $handler($request);
 }
+
+$response = $pipeline($request, new NotFoundHandler());
 
 ### Post processing
 $response = $response->withHeader("X-Developer", 'Fred');

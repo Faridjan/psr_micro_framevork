@@ -34,7 +34,7 @@
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/Http/Action/CabinetAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Http/Action/CabinetAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/Http/Middleware/BasicAuthMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Http/Middleware/BasicAuthMiddleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Framework/Http/ActionResolver.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Http/Pipeline/ActionResolver.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Framework/Http/ActionResolver.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Http/Pipeline/MiddlewareResolver.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Framework/Http/Pipeline/Pipeline.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Http/Pipeline/Pipeline.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -183,7 +183,7 @@
       <workItem from="1605523100272" duration="6022000" />
       <workItem from="1605518932569" duration="3505000" />
       <workItem from="1605525621008" duration="5704000" />
-      <workItem from="1605587197667" duration="12117000" />
+      <workItem from="1605587197667" duration="13360000" />
     </task>
     <servers />
   </component>
