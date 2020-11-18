@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '1af53327344a3ab9f2fa3428d3d71e34ac5407b8',
+    'reference' => 'dbcbbdbc00d426b345c9ddf98652bcc7a712e1c4',
     'name' => 'faridjan/my_framework',
   ),
   'versions' => 
@@ -49,7 +49,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '1af53327344a3ab9f2fa3428d3d71e34ac5407b8',
+      'reference' => 'dbcbbdbc00d426b345c9ddf98652bcc7a712e1c4',
     ),
     'laminas/laminas-diactoros' => 
     array (
@@ -248,6 +248,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'aff2f80e33b7f026ec96bb42f63242dc50ffcae7',
+    ),
+    'psr/http-server-middleware' => 
+    array (
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '2296f45510945530b9dceb8bcedb5cb84d40c5f5',
     ),
     'psr/log' => 
     array (

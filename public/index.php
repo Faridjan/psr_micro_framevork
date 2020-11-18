@@ -6,6 +6,7 @@ use Farid\Framework\Http\Router\AuraRouterAdapter;
 use Farid\Framework\Http\Pipeline\MiddlewareResolver;
 use Aura\Router\RouterContainer;
 use Farid\Framework\Http\Application;
+use Laminas\Diactoros\Response;
 
 use Farid\App\Http\Middleware\BasicAuthMiddleware;
 use Farid\App\Http\Middleware\ProfileMiddleware;
@@ -13,6 +14,7 @@ use Farid\App\Http\Middleware\NotFoundHandler;
 use Farid\App\Http\Middleware\CredentialsMiddleware;
 use Farid\App\Http\Middleware\ErrorHandlerMiddleware;
 use Farid\Framework\Middleware\RouteMiddleware;
+use Farid\Framework\Middleware\DispatchMiddleware;
 
 use Farid\App\Http\Action\HelloAction;
 use Farid\App\Http\Action\AboutAction;
@@ -53,12 +55,13 @@ $router = new AuraRouterAdapter($aura);
 $resolver = new MiddlewareResolver();
 $app = new Application($resolver, new NotFoundHandler());
 
-$app->pipe(new ErrorHandlerMiddleware($params['debug']));
+//$app->pipe(new ErrorHandlerMiddleware($params['debug']));
 $app->pipe(ProfileMiddleware::class);
 $app->pipe(CredentialsMiddleware::class);
-$app->pipe(new RouteMiddleware($router, $resolver));
+$app->pipe(new RouteMiddleware($router)); // Определение маршрута
+$app->pipe(new DispatchMiddleware($resolver)); // Выполнение экшина
 
-$response = $app->run($request);
+$response = $app->run($request, new Response());
 
 ### Sending
 (new SapiEmitter())->emit($response);
@@ -85,6 +88,7 @@ if (preg_match('#html#i', $contentType)) {
        }
        h1,h2 {
        margin-top: 0;
+       text-shadow: 1px 1px #555;
        }
     </style>
 END;
