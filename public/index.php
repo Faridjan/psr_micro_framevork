@@ -6,7 +6,7 @@ use Farid\Framework\Http\Router\AuraRouterAdapter;
 use Farid\Framework\Http\Router\Exception\RequestNotMatchedException;
 use Farid\Framework\Http\Pipeline\MiddlewareResolver;
 use Aura\Router\RouterContainer;
-use Farid\Framework\Http\Pipeline\Pipeline;
+use Farid\Framework\Http\Application;
 
 use Farid\App\Http\Middleware\BasicAuthMiddleware;
 use Farid\App\Http\Middleware\ProfileMiddleware;
@@ -45,27 +45,25 @@ $routes->get('blog_show', '/blog/{id}', ShowAction::class)->tokens(["id" => "\d+
 
 ### ROUTING
 $router = new AuraRouterAdapter($aura);
-$resolver = new MiddlewareResolver();
 
-$pipeline = new Pipeline();
-$pipeline->pipe($resolver->resolve(ProfileMiddleware::class));
+### PIPELINE
+$resolver = new MiddlewareResolver();
+$app = new Application($resolver);
+
+$app->pipe(ProfileMiddleware::class);
 
 try {
     $result = $router->match($request);
-
     foreach ($result->getAttributes() as $attribute => $value) {
         $request = $request->withAttribute($attribute, $value);
     }
-    $handlers = $result->getHandler();
 
-    foreach (is_array($handlers) ? $handlers : [$handlers] as $handler) {
-        $pipeline->pipe($resolver->resolve($handler));
-    }
-
+    $handler = $result->getHandler();
+    $app->pipe($handler);
 } catch (RequestNotMatchedException $e) {
 }
 
-$response = $pipeline($request, new NotFoundHandler());
+$response = $app($request, new NotFoundHandler());
 
 ### Post processing
 $response = $response->withHeader("X-Developer", 'Fred');
@@ -73,8 +71,9 @@ $response = $response->withHeader("X-Developer", 'Fred');
 ### Sending
 (new SapiEmitter())->emit($response);
 
-$contentType = $response->getHeader('content-type')[0];
 
+### CUSTOM
+$contentType = $response->getHeader('content-type')[0];
 if (preg_match('#html#i', $contentType)) {
     echo <<<END
     <style>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\App\Http\Action\Blog;
+namespace Farid\Tests\App\Http\Action\Blog;
 
 use Farid\App\Http\Action\Blog\IndexAction;
 use PHPUnit\Framework\TestCase;
