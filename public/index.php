@@ -3,7 +3,6 @@
 use Laminas\Diactoros\ServerRequestFactory;
 use Laminas\HttpHandlerRunner\Emitter\SapiEmitter;
 use Farid\Framework\Http\Router\AuraRouterAdapter;
-use Farid\Framework\Http\Router\Exception\RequestNotMatchedException;
 use Farid\Framework\Http\Pipeline\MiddlewareResolver;
 use Aura\Router\RouterContainer;
 use Farid\Framework\Http\Application;
@@ -11,6 +10,9 @@ use Farid\Framework\Http\Application;
 use Farid\App\Http\Middleware\BasicAuthMiddleware;
 use Farid\App\Http\Middleware\ProfileMiddleware;
 use Farid\App\Http\Middleware\NotFoundHandler;
+use Farid\App\Http\Middleware\CredentialsMiddleware;
+use Farid\App\Http\Middleware\ErrorHandlerMiddleware;
+use Farid\Framework\Middleware\RouteMiddleware;
 
 use Farid\App\Http\Action\HelloAction;
 use Farid\App\Http\Action\AboutAction;
@@ -25,6 +27,7 @@ $request = ServerRequestFactory::fromGlobals();
 
 ### PARAMS
 $params = [
+    'debug' => true,
     'users' => ['admin' => 'password'],
 ];
 
@@ -48,25 +51,14 @@ $router = new AuraRouterAdapter($aura);
 
 ### PIPELINE
 $resolver = new MiddlewareResolver();
-$app = new Application($resolver);
+$app = new Application($resolver, new NotFoundHandler());
 
+$app->pipe(new ErrorHandlerMiddleware($params['debug']));
 $app->pipe(ProfileMiddleware::class);
+$app->pipe(CredentialsMiddleware::class);
+$app->pipe(new RouteMiddleware($router, $resolver));
 
-try {
-    $result = $router->match($request);
-    foreach ($result->getAttributes() as $attribute => $value) {
-        $request = $request->withAttribute($attribute, $value);
-    }
-
-    $handler = $result->getHandler();
-    $app->pipe($handler);
-} catch (RequestNotMatchedException $e) {
-}
-
-$response = $app($request, new NotFoundHandler());
-
-### Post processing
-$response = $response->withHeader("X-Developer", 'Fred');
+$response = $app->run($request);
 
 ### Sending
 (new SapiEmitter())->emit($response);
