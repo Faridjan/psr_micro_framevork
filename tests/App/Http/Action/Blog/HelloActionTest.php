@@ -16,7 +16,7 @@ class HelloActionTest extends TestCase
         $response = $action($request);
 
         self::assertEquals(200, $response->getStatusCode());
-        self::assertEquals('Hello, Guest!', $response->getBody()->getContents());
+        self::assertEquals('<h2>Hello, Guest!</h2>', $response->getBody()->getContents());
     }
 
     public function testJohn()
@@ -28,6 +28,6 @@ class HelloActionTest extends TestCase
 
         $response = $action($request);
 
-        self::assertEquals('Hello, John!', $response->getBody()->getContents());
+        self::assertEquals('<h2>Hello, John!</h2>', $response->getBody()->getContents());
     }
 }

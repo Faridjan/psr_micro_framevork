@@ -15,8 +15,8 @@ class IndexActionTest extends TestCase
         self::assertEquals(200, $response->getStatusCode());
         self::assertJsonStringEqualsJsonString(
             json_encode([
-                ['id' => 2, 'title' => 'The Second Post'],
-                ['id' => 1, 'title' => 'The First Post'],
+                ['id' => 1, 'Title' => 'Blog page #1'],
+                ['id' => 2, 'Title' => 'Blog page #2'],
             ]),
             $response->getBody()->getContents()
         );

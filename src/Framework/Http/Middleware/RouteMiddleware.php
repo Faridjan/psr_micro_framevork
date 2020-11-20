@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Farid\Framework\Middleware;
+namespace Farid\Framework\Http\Middleware;
 
 use Farid\Framework\Http\Router\Exception\RequestNotMatchedException;
 use Farid\Framework\Http\Router\Result;
