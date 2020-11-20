@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '89524e9a344f1e172cae444a0da0941e2f15fcc0',
+    'reference' => 'f4343f2b9103a960babf65239371b3c14f084188',
     'name' => 'faridjan/my_framework',
   ),
   'versions' => 
@@ -49,7 +49,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '89524e9a344f1e172cae444a0da0941e2f15fcc0',
+      'reference' => 'f4343f2b9103a960babf65239371b3c14f084188',
     ),
     'fig/http-message-util' => 
     array (
@@ -456,6 +456,33 @@ private static $installed = array (
       array (
       ),
       'reference' => 'f4ba089a5b6366e453971d3aad5fe8e897b37f41',
+    ),
+    'symfony/polyfill-mbstring' => 
+    array (
+      'pretty_version' => 'v1.20.0',
+      'version' => '1.20.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '39d483bdf39be819deabf04ec872eb0b2410b531',
+    ),
+    'symfony/polyfill-php80' => 
+    array (
+      'pretty_version' => 'v1.20.0',
+      'version' => '1.20.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e70aa8b064c5b72d3df2abd5ab1e90464ad009de',
+    ),
+    'symfony/var-dumper' => 
+    array (
+      'pretty_version' => 'v5.1.8',
+      'version' => '5.1.8.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4e13f3fcefb1fcaaa5efb5403581406f4e840b9a',
     ),
     'theseer/tokenizer' => 
     array (

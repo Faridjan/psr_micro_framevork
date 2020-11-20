@@ -23,12 +23,18 @@ class ErrorHandlerMiddleware
             return $next($request);
         } catch (\Throwable $e) {
             if ($this->debug) {
-                return new JsonResponse([
+//                return new JsonResponse([
+//                    'error' => 'Server error',
+//                    'code' => $e->getCode(),
+//                    'message' => $e->getMessage(),
+//                    'trace' => $e->getTrace()
+//                ], 500);
+                dump([
                     'error' => 'Server error',
                     'code' => $e->getCode(),
                     'message' => $e->getMessage(),
                     'trace' => $e->getTrace()
-                ], 500);
+                ]);
             }
             return new HtmlResponse('<h2>Server Error</h2>', 500);
         }

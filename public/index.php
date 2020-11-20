@@ -50,7 +50,7 @@ $router = new AuraRouterAdapter($aura);
 $resolver = new MiddlewareResolver();
 $app = new Application($resolver, new NotFoundHandler(), new Response());
 
-//$app->pipe(new ErrorHandlerMiddleware($params['debug']));
+$app->pipe(new ErrorHandlerMiddleware($params['debug']));
 $app->pipe(ProfileMiddleware::class);
 $app->pipe(CredentialsMiddleware::class);
 $app->pipe(new RouteMiddleware($router)); // Определение маршрута
@@ -61,7 +61,6 @@ $response = $app->handle($request);
 
 ### Sending
 (new SapiEmitter())->emit($response);
-
 
 ### CUSTOM
 $contentType = $response->getHeader('content-type')[0];
