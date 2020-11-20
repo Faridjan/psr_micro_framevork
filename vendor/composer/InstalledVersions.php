@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'dbcbbdbc00d426b345c9ddf98652bcc7a712e1c4',
+    'reference' => '89524e9a344f1e172cae444a0da0941e2f15fcc0',
     'name' => 'faridjan/my_framework',
   ),
   'versions' => 
@@ -49,7 +49,16 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'dbcbbdbc00d426b345c9ddf98652bcc7a712e1c4',
+      'reference' => '89524e9a344f1e172cae444a0da0941e2f15fcc0',
+    ),
+    'fig/http-message-util' => 
+    array (
+      'pretty_version' => '1.1.4',
+      'version' => '1.1.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3242caa9da7221a304b8f84eb9eaddae0a7cf422',
     ),
     'laminas/laminas-diactoros' => 
     array (
@@ -60,6 +69,15 @@ private static $installed = array (
       ),
       'reference' => '36ef09b73e884135d2059cc498c938e90821bb57',
     ),
+    'laminas/laminas-escaper' => 
+    array (
+      'pretty_version' => '2.7.0',
+      'version' => '2.7.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5e04bc5ae5990b17159d79d331055e2c645e5cc5',
+    ),
     'laminas/laminas-httphandlerrunner' => 
     array (
       'pretty_version' => '1.2.0',
@@ -68,6 +86,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'e1a5dad040e0043135e8095ee27d1fbf6fb640e1',
+    ),
+    'laminas/laminas-stratigility' => 
+    array (
+      'pretty_version' => '3.3.0',
+      'version' => '3.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd6336b873fe8f766f84b82164f2a25e4decd6a9a',
     ),
     'laminas/laminas-zendframework-bridge' => 
     array (
@@ -455,11 +482,25 @@ private static $installed = array (
         0 => '^2.2.1',
       ),
     ),
+    'zendframework/zend-escaper' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '^2.6.1',
+      ),
+    ),
     'zendframework/zend-httphandlerrunner' => 
     array (
       'replaced' => 
       array (
         0 => '^1.1.0',
+      ),
+    ),
+    'zendframework/zend-stratigility' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '^3.2.0',
       ),
     ),
   ),

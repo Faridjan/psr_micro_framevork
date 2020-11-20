@@ -39,12 +39,7 @@ $routes = $aura->getMap();
 
 $routes->get('home', '/', HelloAction::class);
 $routes->get('about', '/about', AboutAction::class);
-
-$routes->get('cabinet', '/cabinet', [
-    new BasicAuthMiddleware($params['users']),
-    CabinetAction::class,
-]);
-
+$routes->get('cabinet', '/cabinet', CabinetAction::class);
 $routes->get('blog', '/blog', IndexAction::class);
 $routes->get('blog_show', '/blog/{id}', ShowAction::class)->tokens(["id" => "\d+"]);
 
@@ -53,15 +48,16 @@ $router = new AuraRouterAdapter($aura);
 
 ### PIPELINE
 $resolver = new MiddlewareResolver();
-$app = new Application($resolver, new NotFoundHandler());
+$app = new Application($resolver, new NotFoundHandler(), new Response());
 
 //$app->pipe(new ErrorHandlerMiddleware($params['debug']));
 $app->pipe(ProfileMiddleware::class);
 $app->pipe(CredentialsMiddleware::class);
 $app->pipe(new RouteMiddleware($router)); // Определение маршрута
+$app->pipe('cabinet', new BasicAuthMiddleware($params['users']));
 $app->pipe(new DispatchMiddleware($resolver)); // Выполнение экшина
 
-$response = $app->run($request, new Response());
+$response = $app->handle($request);
 
 ### Sending
 (new SapiEmitter())->emit($response);

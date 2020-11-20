@@ -6,12 +6,13 @@ namespace Farid\Framework\Middleware;
 
 use Farid\Framework\Http\Pipeline\MiddlewareResolver;
 use Farid\Framework\Http\Router\Result;
-use Laminas\Diactoros\Response;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\MiddlewareInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 
 
-class DispatchMiddleware
+class DispatchMiddleware implements MiddlewareInterface
 {
     private $resolver;
 
@@ -20,14 +21,14 @@ class DispatchMiddleware
         $this->resolver = $resolver;
     }
 
-    public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next)
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         /** @var Result $result * */
         if (!$result = $request->getAttribute(Result::class)) {
-            return $next($request);
+            return $handler->handle($request);
         };
 
         $middleware = $this->resolver->resolve($result->getHandler());
-        return $middleware($request, $response, $next);
+        return $middleware->process($request, $handler);
     }
 }

@@ -1,33 +1,58 @@
 <?php
 
-
 namespace Farid\Framework\Http;
 
-
 use Farid\Framework\Http\Pipeline\MiddlewareResolver;
-use Farid\Framework\Http\Pipeline\Pipeline;
+use Laminas\Stratigility\Middleware\PathMiddlewareDecorator;
+
+use Laminas\Stratigility\MiddlewarePipe;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\MiddlewareInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 
-class Application extends Pipeline
+class Application implements MiddlewareInterface, RequestHandlerInterface
 {
-    private $resolver;
-    private $default;
+    private MiddlewareResolver $resolver;
+    private RequestHandlerInterface $default;
+    private MiddlewarePipe $pipeline;
+    private ResponseInterface $responsePrototype;
 
-    public function __construct(MiddlewareResolver $resolver, callable $default)
+
+    /**
+     * Application constructor.
+     * @param MiddlewareResolver $resolver
+     * @param RequestHandlerInterface $default
+     * @param ResponseInterface $responsePrototype
+     */
+    public function __construct(MiddlewareResolver $resolver, RequestHandlerInterface $default, ResponseInterface $responsePrototype)
     {
-        parent::__construct();
         $this->resolver = $resolver;
+        $this->pipeline = new MiddlewarePipe();
         $this->default = $default;
+        $this->responsePrototype = $responsePrototype;
     }
 
-    public function pipe($middleware): void
+    public function pipe($path, MiddlewareInterface $middleware = null): void
     {
-        parent::pipe($this->resolver->resolve($middleware));
+        if ($middleware === null) {
+            $this->pipeline->pipe($this->resolver->resolve($path));
+        } else {
+            $this->pipeline->pipe(
+                new PathMiddlewareDecorator(
+                    $path,
+                    $this->resolver->resolve($middleware)
+                ));
+        }
     }
 
-    public function run(ServerRequestInterface $request, ResponseInterface $response)
+    public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        return $this($request, $response, $this->default);
+        return $this->pipeline->process($request, $this->default);
+    }
+
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
+    {
+        return $this->pipeline->process($request, $handler);
     }
 }

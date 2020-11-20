@@ -3,31 +3,31 @@
 
 namespace Farid\Framework\Http\Pipeline;
 
-
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
+use Laminas\Stratigility\Middleware\DoublePassMiddlewareDecorator;
+use Laminas\Stratigility\Middleware\RequestHandlerMiddleware;
+use Laminas\Stratigility\MiddlewarePipe;
 use Psr\Http\Server\MiddlewareInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 
 class MiddlewareResolver
 {
-    public function resolve($handler): callable
+    public function resolve($handler): MiddlewareInterface
     {
         if (\is_array($handler)) {
             return $this->createPipe($handler);
         }
 
         if (\is_string($handler)) {
-            return function (RequestInterface $request, ResponseInterface $response, callable $next) use ($handler) {
-                $middleware = $this->resolve(new $handler());
-                return $middleware($request, $response, $next);
-            };
+            return new LazyMiddlewareDecorator($this, $handler);
         }
 
         if ($handler instanceof MiddlewareInterface) {
-            return function (ServerRequestInterface $request, ResponseInterface $response, callable $next) use ($handler) {
-                return $handler->process($request, new InteropHandlerWrapper($next));
-            };
+//            var_dump($handler);
+            return $handler;
+        }
+
+        if ($handler instanceof RequestHandlerInterface) {
+            return new RequestHandlerMiddleware($handler);
         }
 
         if (\is_object($handler)) {
@@ -36,20 +36,18 @@ class MiddlewareResolver
                 $method = $reflection->getMethod('__invoke');
                 $parameters = $method->getParameters();
                 if (count($parameters) === 2 && $parameters[1]->isCallable()) {
-                    return function (ServerRequestInterface $request, ResponseInterface $response, callable $next) use ($handler) {
-                        return $handler($request, $next);
-                    };
+                    return new SinglePassMiddlewareDecorator($handler);
                 }
-                return $handler;
+                return new DoublePassMiddlewareDecorator($handler);
             }
         }
 
         throw new UnknownMiddlewareTypeException($handler);
     }
 
-    private function createPipe(array $handlers): Pipeline
+    private function createPipe(array $handlers): MiddlewarePipe
     {
-        $pipeline = new Pipeline();
+        $pipeline = new MiddlewarePipe();
         foreach ($handlers as $handler) {
             $pipeline->pipe($this->resolve($handler));
         }
