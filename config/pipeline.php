@@ -3,7 +3,7 @@
 
 use Farid\App\Http\Middleware\BasicAuthMiddleware;
 use Farid\App\Http\Middleware\CredentialsMiddleware;
-use Farid\App\Http\Middleware\ErrorHandlerMiddleware;
+use Farid\App\Http\Middleware\ErrorHandler\ErrorHandlerMiddleware;
 use Farid\App\Http\Middleware\ProfileMiddleware;
 use Farid\Framework\Http\Middleware\DispatchMiddleware;
 use Farid\Framework\Http\Middleware\RouteMiddleware;
