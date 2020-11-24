@@ -3,26 +3,36 @@
 
 namespace Farid\Framework\Http\Pipeline;
 
+use Psr\Container\ContainerInterface;
 use Laminas\Stratigility\Middleware\DoublePassMiddlewareDecorator;
 use Laminas\Stratigility\Middleware\RequestHandlerMiddleware;
 use Laminas\Stratigility\MiddlewarePipe;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
 class MiddlewareResolver
 {
+    private $container;
+    private $responsePrototype;
+
+    public function __construct(ContainerInterface $container, ResponseInterface $responsePrototype)
+    {
+        $this->container = $container;
+        $this->responsePrototype = $responsePrototype;
+    }
+
     public function resolve($handler): MiddlewareInterface
     {
         if (\is_array($handler)) {
             return $this->createPipe($handler);
         }
 
-        if (\is_string($handler)) {
-            return new LazyMiddlewareDecorator($this, $handler);
+        if (\is_string($handler) && $this->container->has($handler)) {
+            return new LazyMiddlewareDecorator($this, $handler, $this->container);
         }
 
         if ($handler instanceof MiddlewareInterface) {
-//            var_dump($handler);
             return $handler;
         }
 
@@ -38,7 +48,7 @@ class MiddlewareResolver
                 if (count($parameters) === 2 && $parameters[1]->isCallable()) {
                     return new SinglePassMiddlewareDecorator($handler);
                 }
-                return new DoublePassMiddlewareDecorator($handler);
+                return new DoublePassMiddlewareDecorator($handler, $this->responsePrototype);
             }
         }
 

@@ -3,13 +3,17 @@
 
 namespace Farid\Framework\Container;
 
+use Psr\Container\ContainerInterface;
 
-use http\Exception\InvalidArgumentException;
-
-class Container implements \ArrayAccess
+class Container implements \ArrayAccess, ContainerInterface
 {
     private array $definitions = [];
     private array $results = [];
+
+    public function __construct(array $definitions = [])
+    {
+        $this->definitions = $definitions;
+    }
 
     public function get($id)
     {
@@ -18,6 +22,28 @@ class Container implements \ArrayAccess
         }
 
         if (!array_key_exists($id, $this->definitions)) {
+            if (class_exists($id)) {
+                $reflection = new \ReflectionClass($id);
+                $arguments = [];
+
+                if (($constructor = $reflection->getConstructor()) !== null) {
+                    foreach ($constructor->getParameters() as $parameter) {
+                        if ($paramClass = $parameter->getClass()) {
+                            $arguments[] = $this->get($paramClass->getName());
+                        } elseif ($parameter->isArray()) {
+                            $arguments[] = [];
+                        } else {
+                            if (!$parameter->isDefaultValueAvailable()) {
+                                throw new ServiceNotFoundException('Unable to resolve "' . $parameter->getName() . '" in service "' . $id . '"');
+                            }
+                            $arguments[] = $parameter->getDefaultValue();
+                        }
+                    }
+                }
+
+                $this->results[$id] = $reflection->newInstanceArgs($arguments);
+                return $this->results[$id];
+            }
             throw new ServiceNotFoundException('Unknown service "' . $id . '"');
         }
 
@@ -30,6 +56,11 @@ class Container implements \ArrayAccess
         }
 
         return $this->results[$id];
+    }
+
+    public function has($id): bool
+    {
+        return array_key_exists($id, $this->definitions) || class_exists($id);
     }
 
     public function set($id, $value): void

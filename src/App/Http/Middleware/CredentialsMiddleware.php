@@ -4,13 +4,16 @@
 namespace Farid\App\Http\Middleware;
 
 
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\MiddlewareInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 
-class CredentialsMiddleware
+class CredentialsMiddleware implements MiddlewareInterface
 {
-    public function __invoke(ServerRequestInterface $request, callable $next)
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        $response = $next($request);
+        $response = $handler->handle($request);
         return $response->withHeader('X-Developer', 'Fred');
     }
 }

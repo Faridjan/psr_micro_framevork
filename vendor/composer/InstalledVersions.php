@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'f4343f2b9103a960babf65239371b3c14f084188',
+    'reference' => '26b9eb9c5dcca7ec3b91ad442fb4c73fb9b7a12f',
     'name' => 'faridjan/my_framework',
   ),
   'versions' => 
@@ -32,6 +32,31 @@ private static $installed = array (
       array (
       ),
       'reference' => '52507bc813c92511dbcacc7463f163ef5149ad38',
+    ),
+    'brick/varexporter' => 
+    array (
+      'pretty_version' => '0.3.2',
+      'version' => '0.3.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '411110b797c6b1ecf947a0eec17ffaa59284f5a0',
+    ),
+    'container-interop/container-interop' => 
+    array (
+      'pretty_version' => '1.2.0',
+      'version' => '1.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '79cbf1341c22ec75643d841642dd5d6acd83bdb8',
+    ),
+    'container-interop/container-interop-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '^1.2',
+      ),
     ),
     'doctrine/instantiator' => 
     array (
@@ -49,7 +74,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'f4343f2b9103a960babf65239371b3c14f084188',
+      'reference' => '26b9eb9c5dcca7ec3b91ad442fb4c73fb9b7a12f',
     ),
     'fig/http-message-util' => 
     array (
@@ -59,6 +84,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '3242caa9da7221a304b8f84eb9eaddae0a7cf422',
+    ),
+    'laminas/laminas-config-aggregator' => 
+    array (
+      'pretty_version' => '1.4.0',
+      'version' => '1.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '1f26cc56ecf26009f1219f13ac5ecbf75394099f',
     ),
     'laminas/laminas-diactoros' => 
     array (
@@ -86,6 +120,24 @@ private static $installed = array (
       array (
       ),
       'reference' => 'e1a5dad040e0043135e8095ee27d1fbf6fb640e1',
+    ),
+    'laminas/laminas-servicemanager' => 
+    array (
+      'pretty_version' => '3.4.1',
+      'version' => '3.4.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '0d4c8628a71fae9f7bd0b1b74b76382e5e9a04b1',
+    ),
+    'laminas/laminas-stdlib' => 
+    array (
+      'pretty_version' => '3.3.1',
+      'version' => '3.3.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd81c7ffe602ed0e6ecb18691019111c0f4bf1efe',
     ),
     'laminas/laminas-stratigility' => 
     array (
@@ -234,6 +286,22 @@ private static $installed = array (
       array (
       ),
       'reference' => '9fa359ff5ddaa5eb2be2bedb08a6a5787a5807ab',
+    ),
+    'psr/container' => 
+    array (
+      'pretty_version' => '1.0.0',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b7ce3b176482dbbc1245ebf52b181af44c2cf55f',
+    ),
+    'psr/container-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '^1.0',
+      ),
     ),
     'psr/http-factory' => 
     array (
@@ -493,6 +561,15 @@ private static $installed = array (
       ),
       'reference' => '75a63c33a8577608444246075ea0af0d052e452a',
     ),
+    'webimpress/safe-writer' => 
+    array (
+      'pretty_version' => '2.1.0',
+      'version' => '2.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5cfafdec5873c389036f14bf832a5efc9390dcdd',
+    ),
     'webmozart/assert' => 
     array (
       'pretty_version' => '1.9.1',
@@ -501,6 +578,13 @@ private static $installed = array (
       array (
       ),
       'reference' => 'bafc69caeb4d49c39fd0779086c03a3738cbb389',
+    ),
+    'zendframework/zend-config-aggregator' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '^1.2.0',
+      ),
     ),
     'zendframework/zend-diactoros' => 
     array (
@@ -521,6 +605,20 @@ private static $installed = array (
       'replaced' => 
       array (
         0 => '^1.1.0',
+      ),
+    ),
+    'zendframework/zend-servicemanager' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '^3.4.0',
+      ),
+    ),
+    'zendframework/zend-stdlib' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '^3.2.1',
       ),
     ),
     'zendframework/zend-stratigility' => 

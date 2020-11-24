@@ -6,11 +6,13 @@ namespace Farid\App\Http\Action\Blog;
 
 use Laminas\Diactoros\Response\JsonResponse;
 use Laminas\Diactoros\ServerRequest;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 
-class ShowAction
+class ShowAction implements RequestHandlerInterface
 {
-    public function __invoke(ServerRequestInterface $request, callable $next)
+    public function handle(ServerRequestInterface $request, callable $next): ResponseInterface
     {
         $id = $request->getAttribute('id');
 

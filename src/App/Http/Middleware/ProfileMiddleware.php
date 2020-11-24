@@ -4,15 +4,18 @@
 namespace Farid\App\Http\Middleware;
 
 
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\MiddlewareInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 
-class ProfileMiddleware
+class ProfileMiddleware implements MiddlewareInterface
 {
-    public function __invoke(ServerRequestInterface $request, callable $next)
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $next): ResponseInterface
     {
         $start = microtime(true);
 
-        $response = $next($request);
+        $response = $next->handle($request);
 
         $stop = microtime(true);
 
