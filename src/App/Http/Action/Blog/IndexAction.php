@@ -11,7 +11,6 @@ class IndexAction implements RequestHandlerInterface
 {
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        throw new \LogicException('Messsss', 555);
         return new JsonResponse([
             ["id" => 1, "Title" => "Blog page #1"],
             ["id" => 2, "Title" => "Blog page #2"]
