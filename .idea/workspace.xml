@@ -29,29 +29,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d6cd90e-6bff-4ecf-817d-36e5a29b5c09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/App/Http/Middleware/ResponseLoggerMiddleware.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Framework/Infrastucture/Framework/Http/Middleware/ErrorHandler/LogErrorListener.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Framework/Http/Middleware/ErrorHandler/ErrorHandlerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignor" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MyFramework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyFramework.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/autoload/development.local.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Framework/Infrastructure/App/Logger/LoggerFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Framework/Infrastructure/Framework/Http/ApplicationFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Framework/Infrastructure/Framework/Http/Middleware/ErrorHandler/ErrorHandlerMiddlewareFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Framework/Infrastructure/Framework/Http/Middleware/ErrorHandler/PrettyErrorResponseGeneratorFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Framework/Infrastructure/Framework/Http/Middleware/ErrorHandler/WhoopsRunFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Framework/Infrastructure/Framework/Http/Middleware/MiddlewareResolverFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Framework/Infrastructure/Framework/Http/Router/RouterFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/autoload/app.global.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/autoload/app.global.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/pipeline.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/pipeline.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/Http/Action/Blog/ShowAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Http/Action/Blog/ShowAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/Http/Middleware/ProfileMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Http/Middleware/ProfileMiddleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Framework/Http/Middleware/ErrorHandler/ErrorHandlerMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Http/Middleware/ErrorHandler/ErrorHandlerMiddleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/App/Http/Action/Blog/HelloActionTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Http/Action/Blog/HelloActionTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/App/Http/Action/Blog/IndexActionTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Http/Action/Blog/IndexActionTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/App/Http/Action/Blog/ShowActionTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Http/Action/Blog/ShowActionTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Framework/Infrastucture/Framework/Http/Middleware/ErrorHandler/LogErrorListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Infrastructure/Framework/Http/Middleware/ErrorHandler/LogErrorListener.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Framework/Infrastucture/Framework/Http/Middleware/ErrorHandler/PrettyErrorResponseGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Infrastructure/Framework/Http/Middleware/ErrorHandler/PrettyErrorResponseGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/log/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/log/application.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +214,7 @@
       <workItem from="1606206892158" duration="13511000" />
       <workItem from="1606278509748" duration="5589000" />
       <workItem from="1606284109627" duration="4296000" />
-      <workItem from="1606297562959" duration="2479000" />
+      <workItem from="1606297562959" duration="7277000" />
     </task>
     <servers />
   </component>
@@ -288,17 +279,17 @@
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
     <state x="779" y="1391" width="424" height="491" key="FileChooserDialogImpl/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1605085093026" />
-    <state x="144" y="1281" width="1041" height="575" key="NewPhpClassDialog" timestamp="1606298935473">
+    <state x="445" y="1387" width="1049" height="575" key="NewPhpClassDialog" timestamp="1606304737356">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
-    <state x="144" y="1281" width="1041" height="575" key="NewPhpClassDialog/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606298935473" />
+    <state x="445" y="1387" width="1049" height="575" key="NewPhpClassDialog/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606304737356" />
     <state x="709" y="273" width="657" height="568" key="NewPhpClassDialog/0.1080.1920.1080/72.0.1848.1080@72.0.1848.1080" timestamp="1605156598554" />
     <state x="709" y="293" width="737" height="554" key="NewPhpClassDialog/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1605184585838" />
     <state x="709" y="293" key="NewPhpClassDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1605245940160" />
-    <state x="791" y="1559" width="399" height="156" key="NewPhpFileDialog" timestamp="1606220718183">
+    <state x="791" y="1559" width="399" height="156" key="NewPhpFileDialog" timestamp="1606300950109">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
-    <state x="791" y="1559" width="399" height="156" key="NewPhpFileDialog/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606220718183" />
+    <state x="791" y="1559" width="399" height="156" key="NewPhpFileDialog/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606300950109" />
     <state x="833" y="479" key="NewPhpFileDialog/0.1080.1920.1080/72.0.1848.1080@72.0.1848.1080" timestamp="1605180675708" />
     <state x="743" y="348" width="424" height="391" key="RestClientTextRequest" timestamp="1605173705804">
       <screen x="72" y="0" width="1848" height="1080" />
@@ -308,10 +299,10 @@
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
     <state x="473" y="1326" width="1022" height="737" key="SettingsEditor/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606284368302" />
-    <state x="514" y="1233" width="772" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606220971377">
+    <state x="514" y="1233" width="772" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606305105817">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
-    <state x="514" y="1233" width="772" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606220971377" />
+    <state x="514" y="1233" width="772" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606305105817" />
     <state x="567" y="153" width="776" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.1080.1920.1080/72.0.1848.1080@72.0.1848.1080" timestamp="1605177509802" />
     <state x="567" y="176" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1605183115690" />
     <state x="687" y="1343" width="618" height="580" key="find.popup" timestamp="1606126807945">

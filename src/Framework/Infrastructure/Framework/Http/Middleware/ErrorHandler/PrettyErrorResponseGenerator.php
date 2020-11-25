@@ -1,6 +1,6 @@
 <?php
 
-namespace Farid\Framework\Infrastucture\Framework\Http\Middleware\ErrorHandler;
+namespace Farid\Framework\Infrastructure\Framework\Http\Middleware\ErrorHandler;
 
 
 use Farid\Framework\Http\Middleware\ErrorHandler\ErrorResponseGenerator;
