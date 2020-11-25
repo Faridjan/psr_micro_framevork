@@ -11,6 +11,8 @@ class ErrorHandlerMiddleware implements MiddlewareInterface
 {
     private $responseGenerator;
 
+    private $listeners = [];
+
     public function __construct(ErrorResponseGenerator $responseGenerator)
     {
         $this->responseGenerator = $responseGenerator;
@@ -21,7 +23,16 @@ class ErrorHandlerMiddleware implements MiddlewareInterface
         try {
             return $handler->handle($request);
         } catch (\Throwable $e) {
+            foreach ($this->listeners as $listener) {
+                $listener($e, $request);
+            }
             return $this->responseGenerator->generate($e, $request);
         }
     }
+
+    public function addListener(callable $listener): void
+    {
+        $this->listeners[] = $listener;
+    }
+
 }

@@ -11,11 +11,11 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 class ProfileMiddleware implements MiddlewareInterface
 {
-    public function process(ServerRequestInterface $request, RequestHandlerInterface $next): ResponseInterface
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         $start = microtime(true);
 
-        $response = $next->handle($request);
+        $response = $handler->handle($request);
 
         $stop = microtime(true);
 

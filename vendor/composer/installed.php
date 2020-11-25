@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '9d61bb587ea18b728ba661a154e99cea98cda4cf',
+    'reference' => '670615a9ad536ce70bacf963534566e86ca248dd',
     'name' => 'faridjan/my_framework',
   ),
   'versions' => 
@@ -61,7 +61,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '9d61bb587ea18b728ba661a154e99cea98cda4cf',
+      'reference' => '670615a9ad536ce70bacf963534566e86ca248dd',
     ),
     'fig/http-message-util' => 
     array (
@@ -152,6 +152,15 @@
       array (
       ),
       'reference' => '6ede70583e101030bcace4dcddd648f760ddf642',
+    ),
+    'monolog/monolog' => 
+    array (
+      'pretty_version' => '2.1.1',
+      'version' => '2.1.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f9eee5cec93dfb313a38b6b288741e84e53f02d5',
     ),
     'myclabs/deep-copy' => 
     array (
@@ -357,6 +366,13 @@
       array (
       ),
       'reference' => '0f73288fd15629204f9d42b7055f72dacbe811fc',
+    ),
+    'psr/log-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '1.0.0',
+      ),
     ),
     'roave/security-advisories' => 
     array (

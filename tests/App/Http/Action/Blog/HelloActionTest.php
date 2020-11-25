@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\App\Http\Action;
+namespace Farid\Tests\App\Http\Action\Blog;
 
 use Farid\App\Http\Action\HelloAction;
 use PHPUnit\Framework\TestCase;
@@ -13,7 +13,7 @@ class HelloActionTest extends TestCase
         $action = new HelloAction();
 
         $request = new ServerRequest();
-        $response = $action($request);
+        $response = $action->handle($request);
 
         self::assertEquals(200, $response->getStatusCode());
         self::assertEquals('<h2>Hello, Guest!</h2>', $response->getBody()->getContents());
@@ -26,7 +26,7 @@ class HelloActionTest extends TestCase
         $request = (new ServerRequest())
             ->withQueryParams(['name' => 'John']);
 
-        $response = $action($request);
+        $response = $action->handle($request);
 
         self::assertEquals('<h2>Hello, John!</h2>', $response->getBody()->getContents());
     }

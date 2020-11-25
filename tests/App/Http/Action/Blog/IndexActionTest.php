@@ -3,6 +3,7 @@
 namespace Farid\Tests\App\Http\Action\Blog;
 
 use Farid\App\Http\Action\Blog\IndexAction;
+use Laminas\Diactoros\ServerRequest;
 use PHPUnit\Framework\TestCase;
 
 class IndexActionTest extends TestCase
@@ -10,7 +11,7 @@ class IndexActionTest extends TestCase
     public function testSuccess()
     {
         $action = new IndexAction();
-        $response = $action();
+        $response = $action->handle(new ServerRequest());
 
         self::assertEquals(200, $response->getStatusCode());
         self::assertJsonStringEqualsJsonString(

@@ -29,112 +29,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d6cd90e-6bff-4ecf-817d-36e5a29b5c09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Framework/Http/Middleware/ErrorHandler/WhoopsErrorResponseGenerator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Framework/Infrastucture/Framework/Http/Middleware/ErrorHandler/PrettyErrorResponseGenerator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App/Http/Middleware/ResponseLoggerMiddleware.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Framework/Infrastucture/Framework/Http/Middleware/ErrorHandler/LogErrorListener.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Framework/Http/Middleware/ErrorHandler/ErrorHandlerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignor" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/MyFramework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyFramework.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/autoload/app.global.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/autoload/app.global.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/pipeline.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/pipeline.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/Http/Middleware/ErrorHandler/ErrorHandlerMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Http/Middleware/ErrorHandler/ErrorHandlerMiddleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/Http/Middleware/ErrorHandler/ErrorResponseGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Http/Middleware/ErrorHandler/ErrorResponseGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/Http/Middleware/ErrorHandler/PrettyErrorResponseGenerator.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bin/var-dump-server" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Http/Action/Blog/ShowAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Http/Action/Blog/ShowAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Http/Middleware/ProfileMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Http/Middleware/ProfileMiddleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Framework/Http/Middleware/ErrorHandler/ErrorHandlerMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Http/Middleware/ErrorHandler/ErrorHandlerMiddleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/App/Http/Action/Blog/HelloActionTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Http/Action/Blog/HelloActionTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/App/Http/Action/Blog/IndexActionTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Http/Action/Blog/IndexActionTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/App/Http/Action/Blog/ShowActionTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/App/Http/Action/Blog/ShowActionTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring/Mbstring.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring/bootstrap.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-php80/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-php80/Php80.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-php80/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-php80/Resources/stubs/Attribute.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-php80/Resources/stubs/Stringable.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-php80/Resources/stubs/ValueError.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-php80/bootstrap.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-php80/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/AmqpCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/ArgsStub.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/Caster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/ClassStub.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/ConstStub.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/CutArrayStub.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/CutStub.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/DOMCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/DateCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/DoctrineCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/DsCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/DsPairStub.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/EnumStub.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/ExceptionCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/FrameStub.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/GmpCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/ImagineCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/ImgStub.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/IntlCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/LinkStub.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/MemcachedCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/PdoCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/PgSqlCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/ProxyManagerCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/RdKafkaCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/RedisCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/ReflectionCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/ResourceCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/SplCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/StubCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/SymfonyCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/TraceStub.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/UuidCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/XmlReaderCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/XmlResourceCaster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Cloner/AbstractCloner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Cloner/ClonerInterface.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Cloner/Cursor.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Cloner/Data.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Cloner/DumperInterface.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Cloner/Stub.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Cloner/VarCloner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Command/Descriptor/CliDescriptor.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Command/Descriptor/DumpDescriptorInterface.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Command/Descriptor/HtmlDescriptor.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Command/ServerDumpCommand.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Dumper/AbstractDumper.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Dumper/CliDumper.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Dumper/ContextProvider/CliContextProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Dumper/ContextProvider/ContextProviderInterface.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Dumper/ContextProvider/RequestContextProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Dumper/ContextProvider/SourceContextProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Dumper/ContextualizedDumper.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Dumper/DataDumperInterface.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Dumper/HtmlDumper.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Dumper/ServerDumper.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Exception/ThrowingCasterException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Resources/bin/var-dump-server" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Resources/css/htmlDescriptor.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Resources/functions/dump.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Resources/js/htmlDescriptor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Server/Connection.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Server/DumpServer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Test/VarDumperTestTrait.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/VarDumper.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/composer.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,6 +129,7 @@
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-config-aggregator" />
       <path value="$PROJECT_DIR$/vendor/brick/varexporter" />
       <path value="$PROJECT_DIR$/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
     </include_path>
   </component>
   <component name="ProjectId" id="1k8bHBTDdVrIz0zhvZCkleVmWv8" />
@@ -225,7 +143,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -302,7 +220,10 @@
       <workItem from="1605873663416" duration="3728000" />
       <workItem from="1606107933814" duration="17770000" />
       <workItem from="1606191384872" duration="8171000" />
-      <workItem from="1606206892158" duration="10673000" />
+      <workItem from="1606206892158" duration="13511000" />
+      <workItem from="1606278509748" duration="5589000" />
+      <workItem from="1606284109627" duration="4296000" />
+      <workItem from="1606297562959" duration="2479000" />
     </task>
     <servers />
   </component>
@@ -334,10 +255,10 @@
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="717" y="0" key="#PHP/0.1080.1920.1080/72.0.1848.1080@72.0.1848.1080" timestamp="1605087138863" />
-    <state x="359" y="1277" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605784335138">
+    <state x="359" y="1277" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606284040137">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
-    <state x="359" y="1277" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1605784335138" />
+    <state x="359" y="1277" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606284040137" />
     <state x="418" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.1080.1920.1080/72.0.1848.1080@72.0.1848.1080" timestamp="1605090928229" />
     <state x="418" y="219" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1605250932910" />
     <state x="660" y="342" width="608" height="410" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605159148953">
@@ -354,10 +275,10 @@
     </state>
     <state x="700" y="1320" width="384" height="453" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606133077979" />
     <state x="746" y="240" width="408" height="614" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.1080.1920.1080/72.0.1848.1080@72.0.1848.1080" timestamp="1605090817896" />
-    <state x="683" y="1371" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606213339270">
+    <state x="683" y="1371" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606297441644">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
-    <state x="683" y="1371" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606213339270" />
+    <state x="683" y="1371" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606297441644" />
     <state x="729" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1605251298306" />
     <state x="705" y="1356" width="572" height="561" key="#com.jetbrains.php.refactoring.extract.interface.PhpExtractInterfaceDialog#" timestamp="1606132894320">
       <screen x="0" y="1080" width="1920" height="1080" />
@@ -367,46 +288,50 @@
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
     <state x="779" y="1391" width="424" height="491" key="FileChooserDialogImpl/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1605085093026" />
-    <state x="144" y="1281" width="801" height="568" key="NewPhpClassDialog" timestamp="1606215793114">
+    <state x="144" y="1281" width="1041" height="575" key="NewPhpClassDialog" timestamp="1606298935473">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
-    <state x="144" y="1281" width="801" height="568" key="NewPhpClassDialog/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606215793114" />
+    <state x="144" y="1281" width="1041" height="575" key="NewPhpClassDialog/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606298935473" />
     <state x="709" y="273" width="657" height="568" key="NewPhpClassDialog/0.1080.1920.1080/72.0.1848.1080@72.0.1848.1080" timestamp="1605156598554" />
     <state x="709" y="293" width="737" height="554" key="NewPhpClassDialog/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1605184585838" />
     <state x="709" y="293" key="NewPhpClassDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1605245940160" />
-    <state x="791" y="1559" width="399" height="156" key="NewPhpFileDialog" timestamp="1606135802935">
+    <state x="791" y="1559" width="399" height="156" key="NewPhpFileDialog" timestamp="1606220718183">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
-    <state x="791" y="1559" width="399" height="156" key="NewPhpFileDialog/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606135802935" />
+    <state x="791" y="1559" width="399" height="156" key="NewPhpFileDialog/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606220718183" />
     <state x="833" y="479" key="NewPhpFileDialog/0.1080.1920.1080/72.0.1848.1080@72.0.1848.1080" timestamp="1605180675708" />
     <state x="743" y="348" width="424" height="391" key="RestClientTextRequest" timestamp="1605173705804">
       <screen x="72" y="0" width="1848" height="1080" />
     </state>
     <state x="743" y="348" width="424" height="391" key="RestClientTextRequest/0.1080.1920.1080/72.0.1848.1080@72.0.1848.1080" timestamp="1605173705804" />
-    <state x="555" y="1280" width="1022" height="737" key="SettingsEditor" timestamp="1606136067567">
+    <state x="473" y="1326" width="1022" height="737" key="SettingsEditor" timestamp="1606284368302">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
-    <state x="555" y="1280" width="1022" height="737" key="SettingsEditor/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606136067567" />
-    <state x="514" y="1233" width="772" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606209571219">
+    <state x="473" y="1326" width="1022" height="737" key="SettingsEditor/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606284368302" />
+    <state x="514" y="1233" width="772" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606220971377">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
-    <state x="514" y="1233" width="772" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606209571219" />
+    <state x="514" y="1233" width="772" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606220971377" />
     <state x="567" y="153" width="776" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.1080.1920.1080/72.0.1848.1080@72.0.1848.1080" timestamp="1605177509802" />
     <state x="567" y="176" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1605183115690" />
     <state x="687" y="1343" width="618" height="580" key="find.popup" timestamp="1606126807945">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
     <state x="687" y="1343" width="618" height="580" key="find.popup/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606126807945" />
-    <state x="574" y="1325" width="672" height="677" key="run.anything.popup" timestamp="1606215216707">
+    <state x="828" y="1394" width="325" height="485" key="refactoring.ChangeSignatureDialog" timestamp="1606220829313">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
-    <state x="574" y="1325" width="672" height="677" key="run.anything.popup/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606215216707" />
+    <state x="828" y="1394" width="325" height="485" key="refactoring.ChangeSignatureDialog/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606220829313" />
+    <state x="574" y="1325" width="672" height="677" key="run.anything.popup" timestamp="1606281319640">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="574" y="1325" width="672" height="677" key="run.anything.popup/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606281319640" />
     <state x="624" y="245" key="run.anything.popup/0.1080.1920.1080/72.0.1848.1080@72.0.1848.1080" timestamp="1605160316478" />
     <state x="624" y="266" key="run.anything.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1605247302396" />
-    <state x="659" y="1339" width="672" height="678" key="search.everywhere.popup" timestamp="1606210542048">
+    <state x="659" y="1339" width="672" height="678" key="search.everywhere.popup" timestamp="1606287148785">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
-    <state x="659" y="1339" width="672" height="678" key="search.everywhere.popup/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606210542048" />
+    <state x="659" y="1339" width="672" height="678" key="search.everywhere.popup/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606287148785" />
     <state x="706" y="259" width="672" height="678" key="search.everywhere.popup/0.1080.1920.1080/72.0.1848.1080@72.0.1848.1080" timestamp="1605157599540" />
     <state x="706" y="280" width="672" height="662" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1605250199208" />
   </component>

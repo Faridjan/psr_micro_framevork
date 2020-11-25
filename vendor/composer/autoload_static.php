@@ -61,6 +61,10 @@ class ComposerStaticInit8f4b421636383ccc6a2a276bfae52d1b
             'Prophecy\\' => 9,
             'PhpParser\\' => 10,
         ),
+        'M' => 
+        array (
+            'Monolog\\' => 8,
+        ),
         'L' => 
         array (
             'Laminas\\ZendFrameworkBridge\\' => 28,
@@ -145,6 +149,10 @@ class ComposerStaticInit8f4b421636383ccc6a2a276bfae52d1b
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'Monolog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
         'Laminas\\ZendFrameworkBridge\\' => 
         array (
