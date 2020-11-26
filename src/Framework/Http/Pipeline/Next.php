@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Farid\Framework\Http\Pipeline;
-
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -33,4 +31,3 @@ class Next
         });
     }
 }
-

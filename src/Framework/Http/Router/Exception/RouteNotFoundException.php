@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Farid\Framework\Http\Router\Exception;
 
 class RouteNotFoundException extends \LogicException

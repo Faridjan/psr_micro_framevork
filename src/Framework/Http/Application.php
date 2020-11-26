@@ -6,7 +6,6 @@ use Farid\Framework\Http\Pipeline\MiddlewareResolver;
 use Farid\Framework\Http\Router\Router;
 use Laminas\Stratigility\Middleware\PathMiddlewareDecorator;
 use Farid\Framework\Http\Router\RouteData;
-
 use Laminas\Stratigility\MiddlewarePipe;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -47,7 +46,8 @@ class Application implements MiddlewareInterface, RequestHandlerInterface
                 new PathMiddlewareDecorator(
                     $path,
                     $this->resolver->resolve($middleware)
-                ));
+                )
+            );
         }
     }
 

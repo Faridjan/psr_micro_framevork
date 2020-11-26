@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '670615a9ad536ce70bacf963534566e86ca248dd',
+    'reference' => 'e330721c3b6049de640bae214a3c9c9ca71d019e',
     'name' => 'faridjan/my_framework',
   ),
   'versions' => 
@@ -74,7 +74,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '670615a9ad536ce70bacf963534566e86ca248dd',
+      'reference' => 'e330721c3b6049de640bae214a3c9c9ca71d019e',
     ),
     'fig/http-message-util' => 
     array (
@@ -540,6 +540,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'c6c1022351a901512170118436c764e473f6de8c',
+    ),
+    'squizlabs/php_codesniffer' => 
+    array (
+      'pretty_version' => '3.5.8',
+      'version' => '3.5.8.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9d583721a7157ee997f235f327de038e7ea6dac4',
     ),
     'symfony/polyfill-ctype' => 
     array (

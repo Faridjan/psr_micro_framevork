@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Farid\App\Http\Action;
 
 use Laminas\Diactoros\Response\HtmlResponse;

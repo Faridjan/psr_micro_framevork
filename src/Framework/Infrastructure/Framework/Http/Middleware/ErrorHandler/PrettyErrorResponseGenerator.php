@@ -2,7 +2,6 @@
 
 namespace Farid\Framework\Infrastructure\Framework\Http\Middleware\ErrorHandler;
 
-
 use Farid\Framework\Http\Middleware\ErrorHandler\ErrorResponseGenerator;
 use Laminas\Diactoros\Response;
 use Laminas\Stratigility\Utils;
@@ -24,5 +23,4 @@ class PrettyErrorResponseGenerator implements ErrorResponseGenerator
         $response->getBody()->write('<h2>Server Error</h2>');
         return $response;
     }
-
 }

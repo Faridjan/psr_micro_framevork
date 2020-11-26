@@ -34,5 +34,4 @@ class ErrorHandlerMiddleware implements MiddlewareInterface
     {
         $this->listeners[] = $listener;
     }
-
 }

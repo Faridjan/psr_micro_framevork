@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Farid\App\Http\Action\Blog;
-
 
 use Laminas\Diactoros\Response\JsonResponse;
 use Psr\Http\Message\ResponseInterface;

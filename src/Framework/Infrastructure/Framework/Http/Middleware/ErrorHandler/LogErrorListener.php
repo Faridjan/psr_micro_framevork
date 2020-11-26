@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Farid\Framework\Infrastructure\Framework\Http\Middleware\ErrorHandler;
-
 
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\LoggerInterface;
@@ -19,7 +17,8 @@ class LogErrorListener
     public function __invoke(\Throwable $e, ServerRequestInterface $request)
     {
         $this->logger->error(
-            $e->getMessage(), [
+            $e->getMessage(),
+            [
                 'exception' => $e,
                 'request' => self::extractRequest($request),
             ]

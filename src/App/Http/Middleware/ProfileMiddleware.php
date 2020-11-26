@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Farid\App\Http\Middleware;
-
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -21,6 +19,4 @@ class ProfileMiddleware implements MiddlewareInterface
 
         return $response->withHeader('X-Profiler-Time', $stop - $start);
     }
-
-
 }

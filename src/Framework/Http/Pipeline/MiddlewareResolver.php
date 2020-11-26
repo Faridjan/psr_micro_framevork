@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Farid\Framework\Http\Pipeline;
 
 use Psr\Container\ContainerInterface;

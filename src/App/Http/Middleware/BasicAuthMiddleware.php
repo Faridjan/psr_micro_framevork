@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Farid\App\Http\Middleware;
-
 
 use Laminas\Diactoros\Response\EmptyResponse;
 use Psr\Http\Message\ResponseInterface;
@@ -36,5 +34,4 @@ class BasicAuthMiddleware implements MiddlewareInterface
 
         return new EmptyResponse(401, ['WWW-Authenticate' => 'Basic realm=Restricted area']);
     }
-
 }

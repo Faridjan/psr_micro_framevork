@@ -2,7 +2,6 @@
 
 namespace Farid\Framework\Http\Middleware\ErrorHandler;
 
-
 use Laminas\Stratigility\Utils;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Farid\Framework\Http\Middleware;
 
 use Farid\Framework\Http\Router\Exception\RequestNotMatchedException;

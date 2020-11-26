@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Farid\Framework\Container;
 
 use Psr\Container\NotFoundExceptionInterface;

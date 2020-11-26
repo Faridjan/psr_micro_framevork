@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Farid\Framework\Infrastructure\Framework\Http;
-
 
 use Farid\App\Http\Middleware\NotFoundHandler;
 use Farid\Framework\Http\Application;
@@ -21,6 +19,5 @@ class ApplicationFactory
             new NotFoundHandler(),
             new Response()
         );
-
     }
 }

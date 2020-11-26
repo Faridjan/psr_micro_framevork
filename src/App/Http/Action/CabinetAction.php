@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Farid\App\Http\Action;
 
 use Farid\App\Http\Middleware\BasicAuthMiddleware;

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Farid\Framework\Http\Pipeline;
 
 use Laminas\Stratigility\Exception\MissingResponseException;
@@ -8,7 +7,6 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-
 
 class SinglePassMiddlewareDecorator implements MiddlewareInterface
 {

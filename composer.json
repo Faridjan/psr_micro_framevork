@@ -24,11 +24,13 @@
   "require-dev": {
     "filp/whoops": "^2.9",
     "phpunit/phpunit": "^9.4",
-    "roave/security-advisories": "dev-latest"
+    "roave/security-advisories": "dev-latest",
+    "squizlabs/php_codesniffer": "^3.5"
   },
   "autoload": {
     "psr-4": {
       "Farid\\": "src/",
+      "Farid\\Bin": "bin/",
       "Farid\\Tests\\": "tests/"
     }
   },

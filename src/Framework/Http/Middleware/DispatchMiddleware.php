@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Farid\Framework\Http\Middleware;
-
 
 use Farid\Framework\Http\Pipeline\MiddlewareResolver;
 use Farid\Framework\Http\Router\Result;
@@ -10,7 +8,6 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-
 
 class DispatchMiddleware implements MiddlewareInterface
 {
