@@ -10,4 +10,4 @@ $container = require_once __DIR__ . '/../config/container.php';
 
 $command = $container->get(\Farid\App\Console\CacheClearCommand::class);
 
-$command->execute();
+$command->execute(array_slice($argv, 1));

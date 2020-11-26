@@ -9,7 +9,7 @@ use Farid\Framework\Http\Application;
  * @var Farid\Framework\Http\Application $app
  */
 
-require __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 
 $container = require_once __DIR__ . '/../config/container.php';

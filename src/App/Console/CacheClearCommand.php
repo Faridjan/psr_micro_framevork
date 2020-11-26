@@ -6,23 +6,46 @@ namespace Farid\App\Console;
 
 class CacheClearCommand
 {
-    public function execute(): void
+    private $paths = [
+        'log' => 'var/log',
+        'db' => 'var/db'
+    ];
+
+    public function execute(array $args): void
     {
         echo 'Clearing cache' . PHP_EOL;
 
-        $path = 'var/log';
+        $alias = $args[0] ?? null;
 
-        if (file_exists($path)) {
-            echo 'Remove ' . $path . PHP_EOL;
-            $this->delete($path);
-        } else {
-            echo 'Skip ' . $path . PHP_EOL;
+        if (empty($alias)) {
+            $options = array_merge(['all'], array_keys($this->paths));
+            do {
+                fwrite(\STDOUT, 'Choose path [' . implode(',', $options) . ']: ');
+                $choose = trim(fgets(\STDIN));
+            } while (!\in_array($choose, $options, true));
+
+            $alias = $choose;
         }
 
-        echo 'Done!' . PHP_EOL;
+        if ($alias === 'all') {
+            $paths = $this->paths;
+        } else {
+            if (!array_key_exists($alias, $this->paths)) {
+                throw new \InvalidArgumentException('Unknown path alias "' . $alias . '"');
+            }
+            $paths = [$alias => $this->paths[$alias]];
+        }
+        foreach ($paths as $path) {
+            if (file_exists($path)) {
+                echo 'Remove ' . $path . PHP_EOL;
+                $this->delete($path);
+            } else {
+                echo 'Skip ' . $path . PHP_EOL;
+            }
+        }
     }
 
-    public function delete($path): void
+    private static function delete($path): void
     {
         if (!file_exists($path)) {
             throw new \RuntimeException('Undefined path ' . $path);
@@ -34,7 +57,7 @@ class CacheClearCommand
                 if ($item === '.' || $item === '..') {
                     continue;
                 }
-                $this->delete($path . DIRECTORY_SEPARATOR . $item);
+                self::delete($path . DIRECTORY_SEPARATOR . $item);
             }
             if (!rmdir($path)) {
                 throw new \RuntimeException('Unable to delete directory ' . $path);

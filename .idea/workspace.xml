@@ -30,11 +30,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d6cd90e-6bff-4ecf-817d-36e5a29b5c09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/App/Console/CacheClearCommand.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/bin/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/log/application.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/log/config-cache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Console/CacheClearCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Console/CacheClearCommand.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
