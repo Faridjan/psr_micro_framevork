@@ -1,6 +1,8 @@
 #!/usr/bin/env php
 <?php
 
+use Farid\Framework\Console\Input;
+
 require __DIR__ . '/../vendor/autoload.php';
 
 /**
@@ -10,4 +12,6 @@ $container = require_once __DIR__ . '/../config/container.php';
 
 $command = $container->get(\Farid\App\Console\CacheClearCommand::class);
 
-$command->execute(array_slice($argv, 1));
+$input = new Input($argv);
+
+$command->execute($input);

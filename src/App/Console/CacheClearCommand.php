@@ -4,27 +4,24 @@
 namespace Farid\App\Console;
 
 
+use Farid\Framework\Console\Input;
+
 class CacheClearCommand
 {
     private $paths = [
         'log' => 'var/log',
-        'db' => 'var/db'
+        'db' => 'var/db',
+        'twig' => 'var/twig'
     ];
 
-    public function execute(array $args): void
+    public function execute(Input $input): void
     {
         echo 'Clearing cache' . PHP_EOL;
 
-        $alias = $args[0] ?? null;
+        $alias = $input->getArguments(0);
 
         if (empty($alias)) {
-            $options = array_merge(['all'], array_keys($this->paths));
-            do {
-                fwrite(\STDOUT, 'Choose path [' . implode(',', $options) . ']: ');
-                $choose = trim(fgets(\STDIN));
-            } while (!\in_array($choose, $options, true));
-
-            $alias = $choose;
+            $alias = $input->choose('Choose path', array_merge(array_keys($this->paths), ['all']));
         }
 
         if ($alias === 'all') {
