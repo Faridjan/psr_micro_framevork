@@ -1,7 +1,0 @@
-[2020-11-25T11:48:13.874273+00:00] App.ERROR: Unauthorized {"method":"GET","url":"http://0.0.0.0:8080/cabinet/a"} []
-[2020-11-25T11:48:19.270554+00:00] App.ERROR: Unauthorized {"method":"GET","url":"http://0.0.0.0:8080/cabinet/"} []
-[2020-11-25T11:48:30.298037+00:00] App.ERROR: Not Found {"method":"GET","url":"http://0.0.0.0:8080/cabinet/"} []
-[2020-11-25T11:48:36.981985+00:00] App.ERROR: Unauthorized {"method":"GET","url":"http://0.0.0.0:8080/cabinet"} []
-[2020-11-25T11:48:40.516382+00:00] App.ERROR: Not Found {"method":"GET","url":"http://0.0.0.0:8080/cabinet/"} []
-[2020-11-26T05:18:31.739585+00:00] App.ERROR: Not Found {"method":"GET","url":"http://0.0.0.0:8080/favicon.ico"} []
-[2020-11-26T06:39:17.628725+00:00] App.ERROR: Not Found {"method":"GET","url":"http://0.0.0.0:8080/asdfasdf"} []
