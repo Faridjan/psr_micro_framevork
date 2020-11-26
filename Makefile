@@ -6,3 +6,5 @@ cs-check:
 	vendor/bin/phpcs
 cs-fix:
 	vendor/bin/phpcbf
+mock-var:
+	mkdir -p var/log && mkdir -p var/twig && mkdir -p var/db

@@ -5,18 +5,20 @@ namespace Farid\App\Console;
 
 
 use Farid\Framework\Console\Input;
+use Farid\Framework\Console\Output;
 
 class CacheClearCommand
 {
-    private $paths = [
-        'log' => 'var/log',
-        'db' => 'var/db',
-        'twig' => 'var/twig'
-    ];
+    private $paths;
 
-    public function execute(Input $input): void
+    public function __construct(array $paths)
     {
-        echo 'Clearing cache' . PHP_EOL;
+        $this->paths = $paths;
+    }
+
+    public function execute(Input $input, Output $output): void
+    {
+        $output->comment('Clearing cache');
 
         $alias = $input->getArguments(0);
 
@@ -32,14 +34,16 @@ class CacheClearCommand
             }
             $paths = [$alias => $this->paths[$alias]];
         }
+
         foreach ($paths as $path) {
             if (file_exists($path)) {
-                echo 'Remove ' . $path . PHP_EOL;
+                $output->writeIn('Remove ' . $path);
                 $this->delete($path);
             } else {
-                echo 'Skip ' . $path . PHP_EOL;
+                $output->writeIn('Skip ' . $path);
             }
         }
+        $output->info('Done!');
     }
 
     private static function delete($path): void
