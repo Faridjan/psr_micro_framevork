@@ -31,7 +31,7 @@ class CacheClearCommand extends Command
     {
         $output->writeIn("<comment>Clearing cache</comment>");
 
-        $alias = $input->getArguments(1);
+        $alias = $input->getArgument(1);
 
         if (empty($alias)) {
             $alias = $input->choose('Choose path', array_merge(array_keys($this->paths), ['all']));

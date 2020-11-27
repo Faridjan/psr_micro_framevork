@@ -13,7 +13,7 @@ class Input
         $this->args = \array_slice($argv, 1);
     }
 
-    public function getArguments(int $index): string
+    public function getArgument(int $index): string
     {
         return $this->args[$index] ?? '';
     }

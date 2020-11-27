@@ -30,24 +30,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d6cd90e-6bff-4ecf-817d-36e5a29b5c09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/App/Service/FileManager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Framework/Console/Command.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MyFramework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyFramework.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Framework/Console/Aplication.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/bin/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/Console/CacheClearCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Console/CacheClearCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Framework/Console/Output.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Console/Output.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Framework/Infrastructure/Framework/Console/CacheClearCommandFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Infrastructure/Framework/Console/CacheClearCommandFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Framework/Console/Input.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Console/Input.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +210,7 @@
       <workItem from="1606278509748" duration="5589000" />
       <workItem from="1606284109627" duration="4296000" />
       <workItem from="1606297562959" duration="7277000" />
-      <workItem from="1606450852684" duration="3621000" />
+      <workItem from="1606450852684" duration="4294000" />
     </task>
     <servers />
   </component>
@@ -302,10 +288,10 @@
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
     <state x="779" y="1391" width="424" height="491" key="FileChooserDialogImpl/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606385429235" />
-    <state x="267" y="1477" width="1049" height="575" key="NewPhpClassDialog" timestamp="1606454620785">
+    <state x="668" y="1410" width="1049" height="575" key="NewPhpClassDialog" timestamp="1606455971548">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
-    <state x="267" y="1477" width="1049" height="575" key="NewPhpClassDialog/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606454620785" />
+    <state x="668" y="1410" width="1049" height="575" key="NewPhpClassDialog/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606455971548" />
     <state x="709" y="273" width="657" height="568" key="NewPhpClassDialog/0.1080.1920.1080/72.0.1848.1080@72.0.1848.1080" timestamp="1605156598554" />
     <state x="709" y="293" width="737" height="554" key="NewPhpClassDialog/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1605184585838" />
     <state x="709" y="293" key="NewPhpClassDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1605245940160" />
@@ -322,10 +308,10 @@
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
     <state x="473" y="1326" width="1022" height="737" key="SettingsEditor/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606284368302" />
-    <state x="514" y="1233" width="772" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606392912858">
+    <state x="514" y="1233" width="772" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606455979600">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
-    <state x="514" y="1233" width="772" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606392912858" />
+    <state x="514" y="1233" width="772" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.1080.1920.1080/72.0.1848.1080@0.1080.1920.1080" timestamp="1606455979600" />
     <state x="567" y="153" width="776" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.1080.1920.1080/72.0.1848.1080@72.0.1848.1080" timestamp="1605177509802" />
     <state x="567" y="176" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1605183115690" />
     <state x="687" y="1343" width="618" height="580" key="find.popup" timestamp="1606390693538">
