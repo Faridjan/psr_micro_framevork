@@ -8,21 +8,19 @@ class Output
 {
     public function write(string $message): void
     {
-        echo $message;
+        echo $this->process($message);
     }
 
     public function writeIn(string $message): void
     {
-        echo $message . PHP_EOL;
+        echo $this->process($message . PHP_EOL);
     }
 
-    public function info(string $message): void
+    public function process(string $message): string
     {
-        $this->writeIn("\033[32m" . $message . "\033[0m");
-    }
-
-    public function comment(string $message): void
-    {
-        $this->writeIn("\033[33m" . $message . "\033[0m");
+        return strtr($message, [
+            "<comment>" => "\033[33m", "</comment>" => "\033[0m",
+            "<info>" => "\033[32m", "</info>" => "\033[0m",
+        ]);
     }
 }

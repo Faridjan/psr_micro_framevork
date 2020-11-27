@@ -1,26 +1,37 @@
 <?php
 
-
 namespace Farid\App\Console;
 
 
+use Farid\App\Service\FileManager;
+use Farid\Framework\Console\Command;
 use Farid\Framework\Console\Input;
 use Farid\Framework\Console\Output;
 
-class CacheClearCommand
+class CacheClearCommand extends Command
 {
     private $paths;
+    private $fileManager;
 
-    public function __construct(array $paths)
+    public function __construct(array $paths, FileManager $fileManager)
     {
         $this->paths = $paths;
+        $this->fileManager = $fileManager;
+        parent::__construct();
+    }
+
+    protected function configure(): void
+    {
+        $this
+            ->setName('cache:clear')
+            ->setDescription('Clearing cache');
     }
 
     public function execute(Input $input, Output $output): void
     {
-        $output->comment('Clearing cache');
+        $output->writeIn("<comment>Clearing cache</comment>");
 
-        $alias = $input->getArguments(0);
+        $alias = $input->getArguments(1);
 
         if (empty($alias)) {
             $alias = $input->choose('Choose path', array_merge(array_keys($this->paths), ['all']));
@@ -36,37 +47,14 @@ class CacheClearCommand
         }
 
         foreach ($paths as $path) {
-            if (file_exists($path)) {
+            if ($this->fileManager->exist($path)) {
                 $output->writeIn('Remove ' . $path);
-                $this->delete($path);
+                $this->fileManager->delete($path);
             } else {
                 $output->writeIn('Skip ' . $path);
             }
         }
-        $output->info('Done!');
+        $output->writeIn("<info>Done!</info>");
     }
 
-    private static function delete($path): void
-    {
-        if (!file_exists($path)) {
-            throw new \RuntimeException('Undefined path ' . $path);
-        }
-
-        if (is_dir($path)) {
-
-            foreach (scandir($path, SCANDIR_SORT_ASCENDING) as $item) {
-                if ($item === '.' || $item === '..') {
-                    continue;
-                }
-                self::delete($path . DIRECTORY_SEPARATOR . $item);
-            }
-            if (!rmdir($path)) {
-                throw new \RuntimeException('Unable to delete directory ' . $path);
-            }
-        } else {
-            if (!unlink($path)) {
-                throw new \RuntimeException('Unable to delete file ' . $path);
-            }
-        }
-    }
 }

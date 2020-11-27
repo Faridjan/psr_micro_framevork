@@ -5,12 +5,13 @@ namespace Farid\Framework\Infrastructure\Framework\Console;
 
 
 use Farid\App\Console\CacheClearCommand;
+use Farid\App\Service\FileManager;
 use Psr\Container\ContainerInterface;
 
 class CacheClearCommandFactory
 {
     public function __invoke(ContainerInterface $container)
     {
-        return new CacheClearCommand($container->get('config')['console']['cachePaths']);
+        return new CacheClearCommand($container->get('config')['console']['cachePaths'], $container->get(FileManager::class));
     }
 }

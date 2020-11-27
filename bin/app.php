@@ -1,6 +1,7 @@
 #!/usr/bin/env php
 <?php
 
+use Farid\App\Console\CacheClearCommand;
 use Farid\Framework\Console\Input;
 use Farid\Framework\Console\Output;
 
@@ -11,20 +12,34 @@ require __DIR__ . '/../vendor/autoload.php';
  */
 $container = require_once __DIR__ . '/../config/container.php';
 
-$command = $container->get(\Farid\App\Console\CacheClearCommand::class);
+
+$commands = [
+    $container->get(CacheClearCommand::class)
+];
 
 $input = new Input($argv);
 $output = new Output();
+$name = $input->getArguments(0);
 
-$command->execute($input, $output);
+/**
+ * @var CacheClearCommand $command
+ */
 
-//echo "Hello Fred! \n";
-//echo "Hello \033[31mAGAIN\033[0m!\n";
-//echo "Hello \033[32mAGAIN\033[0m!\n";
-//echo "Hello \033[33mAGAIN\033[0m!\n";
-//echo "Hello \033[34mAGAIN\033[0m!\n";
-//echo "Hello \033[35mAGAIN\033[0m!\n";
-//echo "Hello \033[36mAGAIN\033[0m!\n";
+if (!empty($name)) {
+    foreach ($commands as $command) {
+        if ($command->getName() === $name) {
+            $command->execute($input, $output);
+            exit;
+        }
+    }
+    throw new InvalidArgumentException('Undefined command ' . $name);
+}
+
+$output->writeIn('<comment>Available commands:</comment>');
+foreach ($commands as $command) {
+    $output->writeIn('<info>' . $command->getName() . '</info>' . "\t" . $command->getDescription());
+}
+$output->writeIn('');
 
 //while (true) {
 //    echo "Hello \033[36mAGAIN\033[0m!\n";
