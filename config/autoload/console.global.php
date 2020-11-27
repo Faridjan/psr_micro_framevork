@@ -7,6 +7,9 @@ return [
         ]
     ],
     'console' => [
+        'commands' => [
+            \Farid\App\Console\CacheClearCommand::class
+        ],
         'cachePaths' => [
             'log' => 'var/log',
             'db' => 'var/db',
