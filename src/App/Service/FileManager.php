@@ -6,19 +6,18 @@ namespace Farid\App\Service;
 
 class FileManager
 {
-    public function exist(string $path): bool
+    public function exists(string $path): bool
     {
         return file_exists($path);
     }
 
     public function delete($path): void
     {
-        if (!$this->exist($path)) {
+        if (!$this->exists($path)) {
             throw new \RuntimeException('Undefined path ' . $path);
         }
 
         if (is_dir($path)) {
-
             foreach (scandir($path, SCANDIR_SORT_ASCENDING) as $item) {
                 if ($item === '.' || $item === '..') {
                     continue;
@@ -34,9 +33,4 @@ class FileManager
             }
         }
     }
-//
-//    public function normalizePath(string $path): string
-//    {
-//        return __DIR__ . '/' . $path;
-//    }
 }

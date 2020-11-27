@@ -1,9 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-use Farid\App\Console\CacheClearCommand;
-use Farid\Framework\Console\Input;
-use Farid\Framework\Console\Output;
+use Symfony\Component\Console\Application;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -12,14 +10,14 @@ require __DIR__ . '/../vendor/autoload.php';
  */
 $container = require_once __DIR__ . '/../config/container.php';
 
-$cli = new \Farid\Framework\Console\Application();
+$cli = new Application('Application console');
 
 $commands = $container->get('config')['console']['commands'];
 foreach ($commands as $command) {
     $cli->add($container->get($command));
 }
 
-$cli->run(new Input($argv), new Output());
+$cli->run();
 
 //while (true) {
 //    echo "Hello \033[36mAGAIN\033[0m!\n";

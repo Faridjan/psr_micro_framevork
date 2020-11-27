@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '09bfaeb8fc585b8573e09fd0e6672be20bad16d0',
+    'reference' => 'd78bed9b23f2461b25ab3605ee09a3e7e58231d5',
     'name' => 'faridjan/my_framework',
   ),
   'versions' => 
@@ -74,7 +74,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '09bfaeb8fc585b8573e09fd0e6672be20bad16d0',
+      'reference' => 'd78bed9b23f2461b25ab3605ee09a3e7e58231d5',
     ),
     'fig/http-message-util' => 
     array (
@@ -385,6 +385,7 @@ private static $installed = array (
       'provided' => 
       array (
         0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'roave/security-advisories' => 
@@ -550,6 +551,15 @@ private static $installed = array (
       ),
       'reference' => '9d583721a7157ee997f235f327de038e7ea6dac4',
     ),
+    'symfony/console' => 
+    array (
+      'pretty_version' => 'v5.1.8',
+      'version' => '5.1.8.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e0b2c29c0fa6a69089209bbe8fcff4df2a313d0e',
+    ),
     'symfony/polyfill-ctype' => 
     array (
       'pretty_version' => 'v1.20.0',
@@ -558,6 +568,24 @@ private static $installed = array (
       array (
       ),
       'reference' => 'f4ba089a5b6366e453971d3aad5fe8e897b37f41',
+    ),
+    'symfony/polyfill-intl-grapheme' => 
+    array (
+      'pretty_version' => 'v1.20.0',
+      'version' => '1.20.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'c7cf3f858ec7d70b89559d6e6eb1f7c2517d479c',
+    ),
+    'symfony/polyfill-intl-normalizer' => 
+    array (
+      'pretty_version' => 'v1.20.0',
+      'version' => '1.20.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '727d1096295d807c309fb01a851577302394c897',
     ),
     'symfony/polyfill-mbstring' => 
     array (
@@ -568,6 +596,15 @@ private static $installed = array (
       ),
       'reference' => '39d483bdf39be819deabf04ec872eb0b2410b531',
     ),
+    'symfony/polyfill-php73' => 
+    array (
+      'pretty_version' => 'v1.20.0',
+      'version' => '1.20.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8ff431c517be11c78c48a39a66d37431e26a6bed',
+    ),
     'symfony/polyfill-php80' => 
     array (
       'pretty_version' => 'v1.20.0',
@@ -576,6 +613,24 @@ private static $installed = array (
       array (
       ),
       'reference' => 'e70aa8b064c5b72d3df2abd5ab1e90464ad009de',
+    ),
+    'symfony/service-contracts' => 
+    array (
+      'pretty_version' => 'v2.2.0',
+      'version' => '2.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd15da7ba4957ffb8f1747218be9e1a121fd298a1',
+    ),
+    'symfony/string' => 
+    array (
+      'pretty_version' => 'v5.1.8',
+      'version' => '5.1.8.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a97573e960303db71be0dd8fda9be3bca5e0feea',
     ),
     'symfony/var-dumper' => 
     array (
