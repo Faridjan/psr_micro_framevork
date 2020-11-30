@@ -44,6 +44,7 @@ return array(
     'Farid\\Tests\\' => array($baseDir . '/tests'),
     'Farid\\Bin\\' => array($baseDir . '/bin'),
     'Farid\\' => array($baseDir . '/src'),
+    'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'Cake\\Utility\\' => array($vendorDir . '/cakephp/utility'),

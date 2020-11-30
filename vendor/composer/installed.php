@@ -117,6 +117,15 @@
       ),
       'reference' => '307fb34a5ab697461ec4c9db865b20ff2fd40771',
     ),
+    'fzaninotto/faker' => 
+    array (
+      'pretty_version' => 'v1.9.1',
+      'version' => '1.9.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'fc10d778e4b84d5bd315dad194661e091d307c6f',
+    ),
     'laminas/laminas-config-aggregator' => 
     array (
       'pretty_version' => '1.4.0',
