@@ -2,6 +2,7 @@
 
 namespace Farid\App\Http\Action\Blog;
 
+use Farid\App\ReadModel\PostReadRepository;
 use Laminas\Diactoros\Response\JsonResponse;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -9,11 +10,19 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 class IndexAction implements RequestHandlerInterface
 {
+    private const PER_PAGE = 5;
+
+    private $posts;
+
+    public function __construct(PostReadRepository $posts)
+    {
+        $this->posts = $posts;
+    }
+
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
         return new JsonResponse([
-            ["id" => 1, "Title" => "Blog page #1"],
-            ["id" => 2, "Title" => "Blog page #2"]
+            $this->posts->getAll()
         ]);
     }
 }

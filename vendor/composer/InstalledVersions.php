@@ -14,12 +14,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
+    'pretty_version' => '1.0.0+no-version-set',
+    'version' => '1.0.0.0',
     'aliases' => 
     array (
     ),
-    'reference' => 'd78bed9b23f2461b25ab3605ee09a3e7e58231d5',
+    'reference' => NULL,
     'name' => 'faridjan/my_framework',
   ),
   'versions' => 
@@ -41,6 +41,42 @@ private static $installed = array (
       array (
       ),
       'reference' => '411110b797c6b1ecf947a0eec17ffaa59284f5a0',
+    ),
+    'cakephp/core' => 
+    array (
+      'pretty_version' => '4.1.6',
+      'version' => '4.1.6.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6584be57b8c39b7e0c5cc0400cc796a55c8e5344',
+    ),
+    'cakephp/database' => 
+    array (
+      'pretty_version' => '4.1.6',
+      'version' => '4.1.6.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '0b7a2fa5eda7d86e84ceb9f8d4fa6ceadbf027ef',
+    ),
+    'cakephp/datasource' => 
+    array (
+      'pretty_version' => '4.1.6',
+      'version' => '4.1.6.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8fdf6abbb84fb8a098f91b8e2ef2d18397d83f11',
+    ),
+    'cakephp/utility' => 
+    array (
+      'pretty_version' => '4.1.6',
+      'version' => '4.1.6.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '302c697df8796198eae9429bb7f817cb79e6401c',
     ),
     'container-interop/container-interop' => 
     array (
@@ -69,12 +105,12 @@ private static $installed = array (
     ),
     'faridjan/my_framework' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => '1.0.0+no-version-set',
+      'version' => '1.0.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'd78bed9b23f2461b25ab3605ee09a3e7e58231d5',
+      'reference' => NULL,
     ),
     'fig/http-message-util' => 
     array (
@@ -388,6 +424,15 @@ private static $installed = array (
         1 => '1.0',
       ),
     ),
+    'psr/simple-cache' => 
+    array (
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '408d5eafb83c57f6365a3ca330ff23aa4a5fa39b',
+    ),
     'roave/security-advisories' => 
     array (
       'pretty_version' => 'dev-latest',
@@ -397,6 +442,15 @@ private static $installed = array (
         0 => '9999999-dev',
       ),
       'reference' => 'e440567339d5fe93d9525e377c5e686b0b08bcca',
+    ),
+    'robmorgan/phinx' => 
+    array (
+      'pretty_version' => '0.12.4',
+      'version' => '0.12.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '05902f4a90790ce9db195954e608d5a43d4d6a7d',
     ),
     'sebastian/cli-parser' => 
     array (
@@ -551,6 +605,15 @@ private static $installed = array (
       ),
       'reference' => '9d583721a7157ee997f235f327de038e7ea6dac4',
     ),
+    'symfony/config' => 
+    array (
+      'pretty_version' => 'v5.2.0',
+      'version' => '5.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'fa1219ecbf96bb5db59f2599cba0960a0d9c3aea',
+    ),
     'symfony/console' => 
     array (
       'pretty_version' => 'v5.1.8',
@@ -559,6 +622,24 @@ private static $installed = array (
       array (
       ),
       'reference' => 'e0b2c29c0fa6a69089209bbe8fcff4df2a313d0e',
+    ),
+    'symfony/deprecation-contracts' => 
+    array (
+      'pretty_version' => 'v2.2.0',
+      'version' => '2.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5fa56b4074d1ae755beb55617ddafe6f5d78f665',
+    ),
+    'symfony/filesystem' => 
+    array (
+      'pretty_version' => 'v5.2.0',
+      'version' => '5.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'bb92ba7f38b037e531908590a858a04d85c0e238',
     ),
     'symfony/polyfill-ctype' => 
     array (

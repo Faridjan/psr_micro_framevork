@@ -12,7 +12,7 @@ class LoggerFactory
     {
         $logger = new Logger('App');
         $logger->pushHandler(new StreamHandler(
-            'var/log/application.log',
+            $container->get('config')['root_dir'] . '/var/log/application.log',
             $container->get('config')['debug'] ? Logger::DEBUG : Logger::WARNING
         ));
         return $logger;

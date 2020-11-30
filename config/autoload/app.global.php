@@ -32,5 +32,6 @@ return [
         ]
     ],
     'debug' => false,
-    'config_cache_enabled' => true
+    'config_cache_enabled' => true,
+    'root_dir' => dirname(dirname(__DIR__))
 ];

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Farid\Framework\Infrastructure\Framework\Console;
-
 
 use Farid\App\Console\Command\CacheClearCommand;
 use Farid\App\Service\FileManager;

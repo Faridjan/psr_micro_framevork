@@ -1,24 +1,20 @@
 <?php
 
-use App\Test\Test4;
-use App\Test\Dispatcher;
-
-use App\Test\ErrorEvent;
-use App\Test\SuccessEvent;
-
 require_once __DIR__ . '/vendor/autoload.php';
 
+$container = require __DIR__ . '/config/container.php';
 
-$test = new Test4();
 
-$test2 = $test;
-$test3 = $test->withIdempotent(20);
+/**
+ * @var \Psr\Container\ContainerInterface $container
+ * @var PDO $pdo
+ */
+$pdo = $container->get(\PDO::class);
 
-$test2->setIdemPotent(10);
+$id = 1;
 
-echo PHP_EOL;
+$stmt = $pdo->prepare('SELECT * FROM posts WHERE id = :id');
+$stmt->bindValue(':id', $id, \PDO::PARAM_INT);
+$stmt->execute();
 
-$test3->setIdemPotent(30);
-
-echo $test3->getIdemPotent() . PHP_EOL;
-echo $test2->getIdemPotent() . PHP_EOL;
+print_r($stmt->fetch(\PDO::FETCH_ASSOC));
