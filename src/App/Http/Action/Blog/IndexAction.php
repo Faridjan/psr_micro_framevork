@@ -2,6 +2,7 @@
 
 namespace Farid\App\Http\Action\Blog;
 
+use Farid\App\ReadModel\Pagination;
 use Farid\App\ReadModel\PostReadRepository;
 use Laminas\Diactoros\Response\JsonResponse;
 use Psr\Http\Message\ResponseInterface;
@@ -21,20 +22,21 @@ class IndexAction implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        $page = $request->getQueryParams() ? $request->getQueryParams()['p'] : 1;
+        $pager = new Pagination(
+            $this->posts->countAll(),
+            $request->getQueryParams() ? $request->getQueryParams()['p'] : 1,
+            self::PER_PAGE
+        );
 
-        $offset = ($page - 1) * self::PER_PAGE;
-        $limit = self::PER_PAGE;
-        $total = $this->posts->countAll();
-
-        $count = ceil($total / $limit);
-
-        $posts = $this->posts->getAll($offset, $limit);
+        $posts = $this->posts->getAll(
+            $pager->getOffset(),
+            $pager->getLimit()
+        );
 
         return new JsonResponse([
             'posts' => $posts,
-            'page' => $page,
-            'count' => $count
+            'page' => $pager->getPage(),
+            'count' => $pager->getPagesCount()
         ]);
     }
 }
