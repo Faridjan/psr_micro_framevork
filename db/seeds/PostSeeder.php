@@ -15,7 +15,7 @@ class PostSeeder extends AbstractSeed
         for ($i = 0; $i < 50; $i++) {
             $data[] = [
                 'title' => trim($faker->sentence, '.'),
-                'data' => $faker->date('d-m-Y H:i:s'),
+                'date' => $faker->date('Y-m-d H:i:s'),
                 'content' => $faker->text(500)
             ];
         }

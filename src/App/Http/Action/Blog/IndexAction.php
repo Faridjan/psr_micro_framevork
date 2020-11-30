@@ -21,8 +21,20 @@ class IndexAction implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
+        $page = $request->getQueryParams() ? $request->getQueryParams()['p'] : 1;
+
+        $offset = ($page - 1) * self::PER_PAGE;
+        $limit = self::PER_PAGE;
+        $total = $this->posts->countAll();
+
+        $count = ceil($total / $limit);
+
+        $posts = $this->posts->getAll($offset, $limit);
+
         return new JsonResponse([
-            $this->posts->getAll()
+            'posts' => $posts,
+            'page' => $page,
+            'count' => $count
         ]);
     }
 }
