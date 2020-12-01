@@ -1,6 +1,6 @@
 <?php
 
-namespace Farid\Framework\Infrastructure\Framework\Http\Middleware\ErrorHandler;
+namespace Farid\Infrastructure\Framework\Http\Middleware\ErrorHandler;
 
 use Farid\Framework\Http\Middleware\ErrorHandler\WhoopsErrorResponseGenerator;
 use Laminas\Diactoros\Response;

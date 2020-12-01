@@ -50,7 +50,7 @@ final class Versions
   'doctrine/inflector' => '1.4.3@4650c8b30c753a76bf44fb2ed00117d6f367490c',
   'doctrine/instantiator' => '1.4.0@d56bf6102915de5702778fe20f2de3b2fe570b5b',
   'doctrine/lexer' => '1.2.1@e864bbf5904cb8f5bb334f99209b48018522f042',
-  'doctrine/migrations' => '2.3.0@100e85a8509b521f010901890f042e9401a3043b',
+  'doctrine/migrations' => '2.2.1@a3987131febeb0e9acb3c47ab0df0af004588934',
   'doctrine/orm' => '2.7.4@7d84a4998091ece4d645253ac65de9f879eeed2f',
   'doctrine/persistence' => '1.3.8@7a6eac9fb6f61bba91328f15aa7547f4806ca288',
   'doctrine/reflection' => '1.2.2@fa587178be682efe90d005e3a322590d6ebb59a5',

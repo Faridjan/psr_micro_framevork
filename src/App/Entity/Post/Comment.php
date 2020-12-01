@@ -7,27 +7,25 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table (name="comments")
+ * @ORM\Table(name="comments")
  */
 class Comment
 {
     /**
-     * @var Post
      * @ORM\ManyToOne(targetEntity="Post", inversedBy="comments")
      * @ORM\JoinColumn(name="post_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
-    private Post $post;
+    private $post;
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue (strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
     /**
      * @ORM\Column(type="datetime_immutable")
      */
     private $date;
-
     /**
      * @ORM\Column(type="string")
      */

@@ -1,6 +1,6 @@
 <?php
 
-namespace Farid\Framework\Infrastructure\Framework\Http;
+namespace Farid\Infrastructure\Framework\Http;
 
 use Farid\App\Http\Middleware\NotFoundHandler;
 use Farid\Framework\Http\Application;

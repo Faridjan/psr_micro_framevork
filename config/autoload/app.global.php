@@ -4,11 +4,11 @@ use Farid\Framework\Http\Application;
 use Farid\Framework\Http\Middleware\ErrorHandler\ErrorHandlerMiddleware;
 use Farid\Framework\Http\Pipeline\MiddlewareResolver;
 use Farid\Framework\Http\Router\Router;
-use Farid\Framework\Infrastructure\App\Logger\LoggerFactory;
-use Farid\Framework\Infrastructure\Framework\Http\ApplicationFactory;
-use Farid\Framework\Infrastructure\Framework\Http\Middleware\ErrorHandler\ErrorHandlerMiddlewareFactory;
-use Farid\Framework\Infrastructure\Framework\Http\Middleware\MiddlewareResolverFactory;
-use Farid\Framework\Infrastructure\Framework\Http\Router\RouterFactory;
+use Farid\Infrastructure\App\Logger\LoggerFactory;
+use Farid\Infrastructure\Framework\Http\ApplicationFactory;
+use Farid\Infrastructure\Framework\Http\Middleware\ErrorHandler\ErrorHandlerMiddlewareFactory;
+use Farid\Infrastructure\Framework\Http\Middleware\MiddlewareResolverFactory;
+use Farid\Infrastructure\Framework\Http\Router\RouterFactory;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 

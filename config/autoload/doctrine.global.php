@@ -32,7 +32,7 @@ return [
             'entities' => [
                 'class' => \Doctrine\ORM\Mapping\Driver\AnnotationDriver::class,
                 'cache' => 'array',
-                'paths' => ['src/App/Entity'],
+                'paths' => __DIR__ . '/../../src/App/Entity',
             ],
         ],
 //        'cache' => [

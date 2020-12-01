@@ -1,6 +1,6 @@
 <?php
 
-namespace Farid\Framework\Infrastructure\Framework\Http\Middleware\ErrorHandler;
+namespace Farid\Infrastructure\Framework\Http\Middleware\ErrorHandler;
 
 use Psr\Container\ContainerInterface;
 

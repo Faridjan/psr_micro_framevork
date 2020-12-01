@@ -1,6 +1,6 @@
 <?php
 
-namespace Farid\Framework\Infrastructure\App\Logger;
+namespace Farid\Infrastructure\App\Logger;
 
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;

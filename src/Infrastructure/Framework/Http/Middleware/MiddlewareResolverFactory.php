@@ -1,6 +1,6 @@
 <?php
 
-namespace Farid\Framework\Infrastructure\Framework\Http\Middleware;
+namespace Farid\Infrastructure\Framework\Http\Middleware;
 
 use Farid\Framework\Http\Pipeline\MiddlewareResolver;
 use Laminas\Diactoros\Response;

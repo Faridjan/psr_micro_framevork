@@ -173,12 +173,12 @@
     ),
     'doctrine/migrations' => 
     array (
-      'pretty_version' => '2.3.0',
-      'version' => '2.3.0.0',
+      'pretty_version' => '2.2.1',
+      'version' => '2.2.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => '100e85a8509b521f010901890f042e9401a3043b',
+      'reference' => 'a3987131febeb0e9acb3c47ab0df0af004588934',
     ),
     'doctrine/orm' => 
     array (

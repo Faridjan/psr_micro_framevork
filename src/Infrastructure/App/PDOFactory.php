@@ -1,6 +1,6 @@
 <?php
 
-namespace Farid\Framework\Infrastructure\App;
+namespace Farid\Infrastructure\App;
 
 use Psr\Container\ContainerInterface;
 

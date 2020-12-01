@@ -1,6 +1,6 @@
 <?php
 
-use Farid\Framework\Infrastructure\App\PDOFactory;
+use Farid\Infrastructure\App\PDOFactory;
 
 return [
     'dependencies' => [
