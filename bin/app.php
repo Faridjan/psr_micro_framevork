@@ -17,12 +17,10 @@ foreach ($commands as $command) {
     $cli->add($container->get($command));
 }
 
+$cli->getHelperSet()->set(new \Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper(
+    $container->get(\Doctrine\ORM\EntityManagerInterface::class)
+), 'em');
+
+\Doctrine\ORM\Tools\Console\ConsoleRunner::addCommands($cli);
+
 $cli->run();
-
-//while (true) {
-//    echo "Hello \033[36mAGAIN\033[0m!\n";
-//    sleep(0.25);
-//    echo "\033[10;500;11;1000]\7";
-//    $i++;
-//}
-
